@@ -270,3 +270,20 @@
                 text-align: center;
             }
         }
+
+            /* Add these styles to your existing style.css */
+            .project-link {
+                text-decoration: none;
+                color: inherit;
+                transition: transform 0.3s ease;
+            }
+
+            .project-link .skill-card {
+                transition: all 0.3s ease;
+            }
+
+            .project-link:hover .skill-card {
+                transform: scale(1.05);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                background-color: #f4f4f4;
+            }
