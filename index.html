@@ -23,7 +23,6 @@
             <a href="#contact">Contact</a>
         </nav>
     </header>
-
     <section class="hero container" id="home">
         <div class="hero-content">
             <h1>James Nguyen</h1>
@@ -37,7 +36,6 @@
             <img src="https://files.catbox.moe/xienfp.png" alt="Avatar">
         </div>
     </section>
-
     <section class="skills container" id="skills">
         <h2 class="section-title">Skills</h2>
         <div class="skills-grid">
@@ -63,23 +61,25 @@
             </div>
         </div>
     </section>
-
     <section class="projects container" id="projects">
         <h2 class="section-title">Project</h2>
         <div class="skills-grid">
-            <div class="skill-card">
-                <i class="fa-solid fa-music"></i>
-                <h3>The band</h3>
-                <p>The band music</p>
-            </div>
-            <div class="skill-card">
-                <i class="fa-solid fa-user"></i>
-                <h3>Portfolio</h3>
-                <p>Portfolio about me</p>
-            </div>
+            <a href="https://github.com/lamdayne/my-first-web" class="project-link" target="_blank">
+                <div class="skill-card">
+                    <i class="fa-solid fa-music"></i>
+                    <h3>The band</h3>
+                    <p>The band music website</p>
+                </div>
+            </a>
+            <a href="https://github.com/lamdayne/portfolio" class="project-link" target="_blank">
+                <div class="skill-card">
+                    <i class="fa-solid fa-user"></i>
+                    <h3>Portfolio</h3>
+                    <p>Portfolio website source code</p>
+                </div>
+            </a>
         </div>
     </section>
-
     <footer class="footer" id="contact">
         <p>© 2024 Nguyễn Hoàng Phương Lâm. Create by James Nguyen.</p>
         <div class="social-links">
@@ -89,7 +89,6 @@
             <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
     </footer>
-
     <script>
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
