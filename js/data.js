@@ -23,7 +23,7 @@ const portfolioData = {
     // Các đoạn văn trong phần About
     aboutParagraphs: [
       "I am a software engineer with a deep interest in backend architecture, database systems, and building clean web services. My journey started with exploring object-oriented programming in Java and grew through engineering full-stack web platforms and data pipelines.",
-      "Currently, I focus on building resilient RESTful microservices with <span class='text-slate-200 font-medium'>Java</span>, <span class='text-slate-200 font-medium'>Spring Boot</span>, and relational databases like <span class='text-slate-200 font-medium'>PostgreSQL</span> and <span class='text-slate-200 font-medium'>MySQL</span>. I enjoy designing normalized database schemas, optimizing query indexes, and keeping application architecture maintainable and testable.",
+      "Currently, I focus on building reliable RESTful APIs and web applications with <span class='text-slate-200 font-medium'>Java</span>, <span class='text-slate-200 font-medium'>Spring Boot</span>, and relational databases like <span class='text-slate-200 font-medium'>PostgreSQL</span> and <span class='text-slate-200 font-medium'>MySQL</span>. I enjoy designing normalized database schemas, optimizing query indexes, and keeping application architecture maintainable and testable.",
       "When I'm not writing code or reading technical documentation, you can find me exploring open-source repositories, refining developer tools, or sharing technical concepts with peers."
     ]
   },
