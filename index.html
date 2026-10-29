@@ -1,708 +1,657 @@
 <!DOCTYPE html>
-<html class="dark scroll-smooth" lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Nguyen Hoang Phuong Lam — Software Engineer &amp; Backend Developer</title>
-  <meta name="description" content="Portfolio of Nguyen Hoang Phuong Lam (@lamdayne). Software Engineer specializing in Java, Spring Boot, RESTful APIs, and relational databases.">
+  <title>Nguyen Hoang Phuong Lam — Software Engineer</title>
+  <meta name="description" content="Nguyen Hoang Phuong Lam is a software engineer who builds reliable backend services, clean APIs, and modern web applications.">
   <meta name="author" content="Nguyen Hoang Phuong Lam">
 
-  <!-- Open Graph / Social Meta -->
-  <meta property="og:type" content="website">
+  <!-- Open Graph / Meta -->
   <meta property="og:title" content="Nguyen Hoang Phuong Lam — Software Engineer">
-  <meta property="og:description" content="Building reliable backend services, clean APIs, and modern web applications.">
-  <meta property="og:site_name" content="Nguyen Hoang Phuong Lam Portfolio">
+  <meta property="og:description" content="Software Engineer specializing in Java, Spring Boot, REST APIs, and database architecture.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lamdayne.github.io/">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-  <!-- Google Fonts: Newsreader (refined editorial serif), Geist & JetBrains Mono -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet">
-  
-  <!-- Material Symbols Outlined -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS with Forms and Container Queries -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  
-  <!-- Tailwind Theme Configuration -->
-  <script id="tailwind-config">
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
     tailwind.config = {
-      darkMode: "class",
       theme: {
         extend: {
-          colors: {
-            dark: {
-              bg: "#090a0f",
-              surface: "#10131a",
-              card: "#131722",
-              border: "#1e2330",
-            }
-          },
           fontFamily: {
-            body: ["Geist", "system-ui", "sans-serif"],
-            display: ["Newsreader", "Georgia", "serif"],
-            mono: ["JetBrains Mono", "monospace"]
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            teal: {
+              300: '#5eead4',
+              400: '#2dd4bf',
+              900: '#134e4a',
+            }
           }
-        },
-      },
+        }
+      }
     }
   </script>
+
   <style>
     body {
-      font-family: 'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #0f172a; /* Slate 900 */
+      color: #94a3b8; /* Slate 400 */
     }
-    .font-serif-title {
-      font-family: 'Newsreader', Georgia, serif;
+
+    /* Custom Selection */
+    ::selection {
+      background-color: #5eead4;
+      color: #0f172a;
     }
-    /* Subtle background grid pattern */
-    .bg-grid-pattern {
-      background-image: radial-gradient(rgba(120, 130, 160, 0.12) 1px, transparent 1px);
-      background-size: 28px 28px;
+
+    /* Active Nav Item */
+    .nav-item.active .nav-indicator {
+      width: 4rem !important;
+      background-color: #f1f5f9 !important;
     }
-    .dark .bg-grid-pattern {
-      background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-      background-size: 28px 28px;
-    }
-    /* Smooth toast notification animation */
-    #copy-toast {
-      transform: translateY(20px);
-      opacity: 0;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    #copy-toast.show {
-      transform: translateY(0);
-      opacity: 1;
+    .nav-item.active .nav-text {
+      color: #f1f5f9 !important;
     }
   </style>
 </head>
-<body class="bg-[#fafafa] dark:bg-[#090a0f] text-zinc-800 dark:text-zinc-200 antialiased selection:bg-zinc-900 selection:text-white dark:selection:bg-zinc-100 dark:selection:text-zinc-900 min-h-screen transition-colors duration-200 relative bg-grid-pattern">
+<body class="bg-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-teal-300 selection:text-teal-900 relative min-h-screen">
 
-  <!-- Sticky Top Navigation -->
-  <nav class="sticky top-0 z-50 bg-[#fafafa]/85 dark:bg-[#090a0f]/85 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800/80 transition-colors">
-    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+  <!-- Mouse Spotlight Glow Effect (Brittany Chiang Signature) -->
+  <div id="spotlight" class="pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute" style="background: radial-gradient(600px at 50% 50%, rgba(29, 78, 216, 0.15), transparent 80%);"></div>
+
+  <div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
+    <div class="lg:flex lg:justify-between lg:gap-4">
       
-      <!-- Brand Monogram & Name -->
-      <a class="flex items-center gap-2.5 text-zinc-900 dark:text-zinc-100 hover:opacity-85 transition-opacity group" href="#">
-        <span class="w-7 h-7 rounded-md bg-zinc-900 dark:bg-zinc-800 border border-zinc-700/50 flex items-center justify-center text-xs font-mono font-bold text-white group-hover:border-blue-500 transition-colors">PL</span>
-        <span class="font-medium text-sm tracking-tight text-zinc-950 dark:text-zinc-100">Nguyen Lam</span>
-        <span class="text-zinc-400 dark:text-zinc-500 text-xs font-mono">/ backend</span>
-      </a>
-
-      <!-- Desktop Nav Items -->
-      <div class="hidden sm:flex items-center space-x-7 text-[13px] text-zinc-500 dark:text-zinc-400 font-medium">
-        <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#about">About</a>
-        <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#technologies">Technologies</a>
-        <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#projects">Projects</a>
-        <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#experience">Experience</a>
-        <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#education">Education</a>
-        <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#contact">Contact</a>
-      </div>
-
-      <!-- Theme Switcher (Dark / Light) -->
-      <div class="flex items-center gap-3">
-        <button id="theme-toggle-btn" class="p-2 rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800/80 transition-all cursor-pointer shadow-xs" aria-label="Toggle Theme" title="Toggle Dark/Light Mode">
-          <!-- Moon Icon (for Light mode) -->
-          <span id="theme-icon-moon" class="material-symbols-outlined text-[18px] hidden">dark_mode</span>
-          <!-- Sun Icon (for Dark mode) -->
-          <span id="theme-icon-sun" class="material-symbols-outlined text-[18px]">light_mode</span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <main class="max-w-5xl mx-auto px-6 pt-16 sm:pt-24">
-
-    <!-- SECTION 1: HERO -->
-    <section class="pb-20 border-b border-zinc-200 dark:border-zinc-800/80" id="about">
-      <div class="max-w-3xl">
-        
-        <!-- Status & Location Pill -->
-        <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-6">
-          <span class="px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950/50 border border-blue-200/80 dark:border-blue-800/60 text-blue-700 dark:text-blue-300 font-semibold tracking-wider text-[11px] flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            Junior Software Engineer
-          </span>
-          <span class="text-blue-300 dark:text-blue-600 font-mono">•</span>
-          <span class="text-zinc-600 dark:text-zinc-400 font-mono tracking-wider text-[11px] flex items-center gap-1">
-            <span class="material-symbols-outlined text-[13px] text-zinc-400">location_on</span>
-            Vietnam · UTC+7
-          </span>
-        </div>
-
-        <!-- Headline -->
-        <h1 class="font-serif-title text-4xl sm:text-6xl text-zinc-950 dark:text-zinc-50 font-normal leading-[1.14] tracking-tight mb-8">
-          Building reliable <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-500 dark:from-blue-400 dark:via-indigo-300 dark:to-sky-400 font-medium">backend services</span>, clean APIs, and pragmatic web applications.
-        </h1>
-
-        <!-- Bio -->
-        <p class="text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed font-light mb-10 max-w-2xl">
-          Hi, I am <strong class="text-zinc-900 dark:text-zinc-100 font-medium">Nguyen Hoang Phuong Lam</strong> (<a href="https://github.com/lamdayne" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline font-mono text-sm">@lamdayne</a>). I am an entry-level software engineer with practical experience in Java, Spring Boot, and relational databases. Focused on clean architecture, continuous learning, and writing code that is clean, testable, and maintainable.
-        </p>
-
-        <!-- Actions -->
-        <div class="flex flex-wrap items-center gap-4 text-sm font-medium">
-          <a class="px-5 py-2.5 rounded-lg bg-zinc-900 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500 text-white transition-all shadow-sm shadow-zinc-900/10 hover:shadow-blue-600/20 active:scale-[0.98]" href="#projects">
-            View Projects
-          </a>
-          <a class="px-5 py-2.5 rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 bg-white dark:bg-[#11131a] hover:border-blue-300 dark:hover:border-blue-700 hover:text-blue-600 dark:hover:text-blue-400 transition-all active:scale-[0.98] shadow-xs" href="#experience">
-            Experience
-          </a>
-          
-          <!-- 1-Click Copy Email Pill -->
-          <button id="copy-email-hero-btn" class="inline-flex items-center gap-1.5 text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-lg border border-zinc-200/80 dark:border-zinc-800/80 bg-white/60 dark:bg-[#11131a]/60 hover:border-blue-300 dark:hover:border-blue-800 transition-all font-mono text-xs cursor-pointer shadow-xs">
-            <span>phuonglam.dev@gmail.com</span>
-            <span class="material-symbols-outlined text-[15px]">content_copy</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 2: TECHNICAL CORE -->
-    <section class="py-20 border-b border-zinc-200 dark:border-zinc-800/80" id="technologies">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-        <div class="md:col-span-4">
-          <h2 class="font-serif-title text-2xl sm:text-3xl text-zinc-950 dark:text-zinc-50">Technical Core</h2>
-          <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed">
-            Core stack and tools I use to build end-to-end web applications. Focused on domain logic, transactional reliability, and clean API contracts.
-          </p>
-        </div>
-
-        <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8">
-          
-          <!-- Category 1 -->
-          <div class="p-6 rounded-xl border border-zinc-200/80 dark:border-zinc-800/90 bg-white dark:bg-[#11141c] shadow-xs hover:border-blue-300 dark:hover:border-blue-700/70 hover:shadow-sm transition-all group">
-            <div class="flex items-center gap-2.5 mb-2.5">
-              <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
-              <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 font-mono">Backend &amp; Services</h3>
-            </div>
-            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
-              Layered architecture, RESTful API design, Spring Security authentication (RBAC), and session management.
-            </p>
-            <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-              <span class="px-2 py-0.5 rounded bg-blue-50/80 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60 font-medium">Java</span>
-              <span class="px-2 py-0.5 rounded bg-emerald-50/80 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-800/60 font-medium">Spring Boot</span>
-              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700">Spring MVC</span>
-              <span class="px-2 py-0.5 rounded bg-sky-50 dark:bg-sky-950/50 text-sky-800 dark:text-sky-300 border border-sky-200/60 dark:border-sky-800/60 font-medium">REST APIs</span>
-            </div>
-          </div>
-
-          <!-- Category 2 -->
-          <div class="p-6 rounded-xl border border-zinc-200/80 dark:border-zinc-800/90 bg-white dark:bg-[#11141c] shadow-xs hover:border-indigo-300 dark:hover:border-indigo-700/70 hover:shadow-sm transition-all group">
-            <div class="flex items-center gap-2.5 mb-2.5">
-              <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
-              <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 font-mono">Storage &amp; Data</h3>
-            </div>
-            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
-              Relational schema modeling, entity mapping with JPA &amp; Hibernate, indexing, and transactional ACID consistency.
-            </p>
-            <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-              <span class="px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950/50 text-blue-800 dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60 font-medium">MySQL</span>
-              <span class="px-2 py-0.5 rounded bg-indigo-50 dark:bg-indigo-950/50 text-indigo-800 dark:text-indigo-300 border border-indigo-200/60 dark:border-indigo-800/60 font-medium">PostgreSQL</span>
-              <span class="px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 border border-amber-200/60 dark:border-amber-800/60 font-medium">Spring Data JPA</span>
-              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700">Hibernate</span>
-            </div>
-          </div>
-
-          <!-- Category 3 -->
-          <div class="p-6 rounded-xl border border-zinc-200/80 dark:border-zinc-800/90 bg-white dark:bg-[#11141c] shadow-xs hover:border-emerald-300 dark:hover:border-emerald-700/70 hover:shadow-sm transition-all group">
-            <div class="flex items-center gap-2.5 mb-2.5">
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-              <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 font-mono">Platform &amp; Tooling</h3>
-            </div>
-            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
-              Git branching workflows, Maven build automation, Postman testing collections, and containerization with Docker.
-            </p>
-            <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-              <span class="px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950/50 text-blue-800 dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60 font-medium">Git &amp; GitHub</span>
-              <span class="px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-800/60 font-medium">Docker</span>
-              <span class="px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 border border-amber-200/60 dark:border-amber-800/60 font-medium">Maven</span>
-              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700">Postman</span>
-            </div>
-          </div>
-
-          <!-- Category 4 -->
-          <div class="p-6 rounded-xl border border-zinc-200/80 dark:border-zinc-800/90 bg-white dark:bg-[#11141c] shadow-xs hover:border-cyan-300 dark:hover:border-cyan-700/70 hover:shadow-sm transition-all group">
-            <div class="flex items-center gap-2.5 mb-2.5">
-              <span class="w-2.5 h-2.5 rounded-full bg-cyan-600"></span>
-              <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 font-mono">Interfaces &amp; Web</h3>
-            </div>
-            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
-              Modern frontend client integration, dynamic DOM manipulation, responsive layouts, and Thymeleaf server templates.
-            </p>
-            <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-              <span class="px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 border border-amber-200/60 dark:border-amber-800/60 font-medium">JavaScript (ES6+)</span>
-              <span class="px-2 py-0.5 rounded bg-cyan-50 dark:bg-cyan-950/50 text-cyan-800 dark:text-cyan-300 border border-cyan-200/60 dark:border-cyan-800/60 font-medium">Tailwind CSS</span>
-              <span class="px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-800/60 font-medium">Thymeleaf</span>
-              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700">HTML5 / CSS3</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 3: PROJECTS -->
-    <section class="py-20 border-b border-zinc-200 dark:border-zinc-800/80" id="projects">
-      <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-12">
+      <!-- ===================================================================
+           LEFT COLUMN: Fixed Hero & Navigation Sidebar
+           =================================================================== -->
+      <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
         <div>
-          <h2 class="font-serif-title text-3xl text-zinc-950 dark:text-zinc-50">Projects</h2>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Featured full-stack applications with tangible architecture &amp; source code.</p>
-        </div>
-        <span class="text-xs font-mono text-zinc-400 dark:text-zinc-500 mt-2 sm:mt-0">Publicly accessible on GitHub</span>
-      </div>
+          <!-- Title & Subtitle -->
+          <h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
+            <a href="#">Nguyen Hoang Phuong Lam</a>
+          </h1>
+          <h2 class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
+            Software Engineer / Backend Developer
+          </h2>
+          <p class="mt-4 max-w-xs leading-normal text-slate-400">
+            I build reliable, modular backend services, clean RESTful APIs, and modern web applications.
+          </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Navigation Links with Expanding Line Indicators -->
+          <nav class="nav hidden lg:block" aria-label="In-page jump links">
+            <ul class="mt-16 w-max">
+              <li>
+                <a class="nav-item group flex items-center py-3 active" href="#about" data-target="about">
+                  <span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span>
+                  <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">About</span>
+                </a>
+              </li>
+              <li>
+                <a class="nav-item group flex items-center py-3" href="#experience" data-target="experience">
+                  <span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span>
+                  <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">Experience</span>
+                </a>
+              </li>
+              <li>
+                <a class="nav-item group flex items-center py-3" href="#education" data-target="education">
+                  <span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span>
+                  <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">Education</span>
+                </a>
+              </li>
+              <li>
+                <a class="nav-item group flex items-center py-3" href="#projects" data-target="projects">
+                  <span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span>
+                  <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">Projects</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Social Icons Footer -->
+        <ul class="ml-1 mt-8 flex items-center gap-5" aria-label="Social media">
+          <!-- GitHub -->
+          <li class="mr-5 text-xs">
+            <a class="block hover:text-slate-200 transition-colors" href="https://github.com/lamdayne" target="_blank" rel="noreferrer noopener" aria-label="GitHub (opens in a new tab)" title="GitHub: @lamdayne">
+              <span class="sr-only">GitHub</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="h-6 w-6" aria-hidden="true">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+              </svg>
+            </a>
+          </li>
+
+          <!-- LinkedIn -->
+          <li class="mr-5 text-xs">
+            <a class="block hover:text-slate-200 transition-colors" href="https://linkedin.com/in/lamdayne" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn (opens in a new tab)" title="LinkedIn: in/lamdayne">
+              <span class="sr-only">LinkedIn</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true">
+                <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+              </svg>
+            </a>
+          </li>
+
+          <!-- Email -->
+          <li class="mr-5 text-xs">
+            <a class="block hover:text-slate-200 transition-colors" href="mailto:phuonglam.dev@gmail.com" aria-label="Email (opens in mail client)" title="Email: phuonglam.dev@gmail.com">
+              <span class="sr-only">Email</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </header>
+
+
+      <!-- ===================================================================
+           RIGHT COLUMN: Main Content Area
+           =================================================================== -->
+      <main id="content" class="pt-24 lg:w-1/2 lg:py-24">
         
-        <!-- Project 1: EzSpend -->
-        <div class="bg-white dark:bg-[#11141c] border border-zinc-200 dark:border-zinc-800/90 rounded-xl p-7 hover:border-blue-400 dark:hover:border-blue-600 hover:shadow-md transition-all group flex flex-col justify-between relative overflow-hidden">
-          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-indigo-500 opacity-90"></div>
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono mb-4 pt-1">
-              <span class="px-2.5 py-0.5 rounded bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 font-semibold border border-blue-100 dark:border-blue-800/60">Finance &amp; Budgeting</span>
-              <a class="text-zinc-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors flex items-center gap-1 font-medium" href="https://github.com/lamdayne/ezspend" target="_blank" rel="noopener noreferrer">
-                <span>Source</span>
-                <span class="material-symbols-outlined text-[14px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">arrow_outward</span>
-              </a>
-            </div>
-            <h3 class="text-xl font-medium text-zinc-900 dark:text-zinc-100 mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-              EzSpend — Personal Expense Tracker
-            </h3>
-            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-              A responsive financial management system engineered for rapid transaction logging, smart monthly budget categorizations, visual cashflow analytics, and threshold breach notifications.
-            </p>
+        <!-- SECTION 1: ABOUT -->
+        <section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="About me">
+          <!-- Mobile Sticky Header -->
+          <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">About</h2>
           </div>
-          <div class="pt-4 border-t border-zinc-100 dark:border-zinc-800/80 flex flex-wrap gap-2 text-xs font-mono text-zinc-600 dark:text-zinc-400">
-            <span class="px-1.5 py-0.5 rounded bg-zinc-50 dark:bg-zinc-800/70 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-300">Java</span>
-            <span class="text-zinc-300 dark:text-zinc-700">•</span>
-            <span class="px-1.5 py-0.5 rounded bg-zinc-50 dark:bg-zinc-800/70 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-300">Spring Boot</span>
-            <span class="text-zinc-300 dark:text-zinc-700">•</span>
-            <span class="px-1.5 py-0.5 rounded bg-zinc-50 dark:bg-zinc-800/70 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-300">MySQL</span>
-            <span class="text-zinc-300 dark:text-zinc-700">•</span>
-            <span class="px-1.5 py-0.5 rounded bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/60 font-medium">Chart.js</span>
-          </div>
-        </div>
 
-        <!-- Project 2: E-Commerce Laptop -->
-        <div class="bg-white dark:bg-[#11141c] border border-zinc-200 dark:border-zinc-800/90 rounded-xl p-7 hover:border-indigo-400 dark:hover:border-indigo-600 hover:shadow-md transition-all group flex flex-col justify-between relative overflow-hidden">
-          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 opacity-90"></div>
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono mb-4 pt-1">
-              <span class="px-2.5 py-0.5 rounded bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 font-semibold border border-indigo-100 dark:border-indigo-800/60">RBAC Security · Filter Engine</span>
-              <a class="text-zinc-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors flex items-center gap-1 font-medium" href="https://github.com/lamdayne/ecommerce-laptop" target="_blank" rel="noopener noreferrer">
-                <span>Source</span>
-                <span class="material-symbols-outlined text-[14px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">arrow_outward</span>
-              </a>
-            </div>
-            <h3 class="text-xl font-medium text-zinc-900 dark:text-zinc-100 mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-              E-Commerce Laptop — Retail &amp; Inventory Suite
-            </h3>
-            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-              Full-featured hardware commerce system handling multifaceted technical filters (CPU, GPU, RAM), transactional checkout with strict stock deduction locks, and back-office order workflow.
-            </p>
-          </div>
-          <div class="pt-4 border-t border-zinc-100 dark:border-zinc-800/80 flex flex-wrap gap-2 text-xs font-mono text-zinc-600 dark:text-zinc-400">
-            <span class="px-1.5 py-0.5 rounded bg-zinc-50 dark:bg-zinc-800/70 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-300">Spring Boot</span>
-            <span class="text-zinc-300 dark:text-zinc-700">•</span>
-            <span class="px-1.5 py-0.5 rounded bg-zinc-50 dark:bg-zinc-800/70 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-300">Spring Security</span>
-            <span class="text-zinc-300 dark:text-zinc-700">•</span>
-            <span class="px-1.5 py-0.5 rounded bg-zinc-50 dark:bg-zinc-800/70 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-300">JPA / Hibernate</span>
-            <span class="text-zinc-300 dark:text-zinc-700">•</span>
-            <span class="px-1.5 py-0.5 rounded bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 border border-indigo-100 dark:border-indigo-800/60 font-medium">PostgreSQL</span>
-          </div>
-        </div>
+          <p class="mb-4 text-slate-400 leading-relaxed">
+            I am a software engineer with a deep interest in backend architecture, database systems, and building clean web services. My journey started with exploring object-oriented programming in Java and grew through engineering full-stack web platforms and data pipelines.
+          </p>
+          <p class="mb-4 text-slate-400 leading-relaxed">
+            Currently, I focus on building resilient RESTful microservices with <span class="text-slate-200 font-medium">Java</span>, <span class="text-slate-200 font-medium">Spring Boot</span>, and relational databases like <span class="text-slate-200 font-medium">PostgreSQL</span> and <span class="text-slate-200 font-medium">MySQL</span>. I enjoy designing normalized database schemas, optimizing query indexes, and keeping application architecture maintainable and testable.
+          </p>
+          <p class="text-slate-400 leading-relaxed">
+            When I'm not writing code or reading technical documentation, you can find me exploring open-source repositories, refining developer tools, or sharing technical concepts with peers.
+          </p>
+        </section>
 
-        <!-- Project 3: SneakerStore -->
-        <div class="bg-white dark:bg-[#11141c] border border-zinc-200 dark:border-zinc-800/90 rounded-xl p-7 hover:border-emerald-400 dark:hover:border-emerald-600 hover:shadow-md transition-all group flex flex-col justify-between relative overflow-hidden">
-          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-600 opacity-90"></div>
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono mb-4 pt-1">
-              <span class="px-2.5 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-300 font-semibold border border-emerald-100 dark:border-emerald-800/60">Dynamic SKU Variant Matrix</span>
-              <a class="text-zinc-400 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors flex items-center gap-1 font-medium" href="https://github.com/lamdayne/sneaker-store" target="_blank" rel="noopener noreferrer">
-                <span>Source</span>
-                <span class="material-symbols-outlined text-[14px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">arrow_outward</span>
-              </a>
-            </div>
-            <h3 class="text-xl font-medium text-zinc-900 dark:text-zinc-100 mb-3 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
-              SneakerStore — Footwear E-Commerce Platform
-            </h3>
-            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-              Footwear commerce engine designed around a normalized SKU variant architecture for managing complex size-color matrices, real-time availability feedback, and checkout workflows.
-            </p>
+        <!-- SECTION 2: EXPERIENCE -->
+        <section id="experience" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Work experience">
+          <!-- Mobile Sticky Header -->
+          <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Experience</h2>
           </div>
-          <div class="pt-4 border-t border-zinc-100 dark:border-zinc-800/80 flex flex-wrap gap-2 text-xs font-mono text-zinc-600 dark:text-zinc-400">
-            <span class="px-1.5 py-0.5 rounded bg-zinc-50 dark:bg-zinc-800/70 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-300">Java</span>
-            <span class="text-zinc-300 dark:text-zinc-700">•</span>
-            <span class="px-1.5 py-0.5 rounded bg-zinc-50 dark:bg-zinc-800/70 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-300">Spring Boot</span>
-            <span class="text-zinc-300 dark:text-zinc-700">•</span>
-            <span class="px-1.5 py-0.5 rounded bg-zinc-50 dark:bg-zinc-800/70 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-300">MySQL</span>
-            <span class="text-zinc-300 dark:text-zinc-700">•</span>
-            <span class="px-1.5 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-300 border border-emerald-100 dark:border-emerald-800/60 font-medium">JavaScript</span>
-          </div>
-        </div>
 
-        <!-- Project 4: Humify -->
-        <div class="bg-white dark:bg-[#11141c] border border-zinc-200 dark:border-zinc-800/90 rounded-xl p-7 hover:border-amber-400 dark:hover:border-amber-600 hover:shadow-md transition-all group flex flex-col justify-between relative overflow-hidden">
-          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 to-orange-500 opacity-90"></div>
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono mb-4 pt-1">
-              <span class="px-2.5 py-0.5 rounded bg-amber-50 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 font-semibold border border-amber-100 dark:border-amber-800/60">HR Management &amp; Attendance</span>
-              <a class="text-zinc-400 group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors flex items-center gap-1 font-medium" href="https://github.com/lamdayne/humify" target="_blank" rel="noopener noreferrer">
-                <span>Source</span>
-                <span class="material-symbols-outlined text-[14px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">arrow_outward</span>
-              </a>
-            </div>
-            <h3 class="text-xl font-medium text-zinc-900 dark:text-zinc-100 mb-3 group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors">
-              Humify — Human Resource &amp; Workspace Management
-            </h3>
-            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-              Internal workspace operations platform built to streamline employee directory records, departmental hierarchies, daily attendance ledgers, and automated payroll computations.
-            </p>
-          </div>
-          <div class="pt-4 border-t border-zinc-100 dark:border-zinc-800/80 flex flex-wrap gap-2 text-xs font-mono text-zinc-600 dark:text-zinc-400">
-            <span class="px-1.5 py-0.5 rounded bg-zinc-50 dark:bg-zinc-800/70 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-300">Java</span>
-            <span class="text-zinc-300 dark:text-zinc-700">•</span>
-            <span class="px-1.5 py-0.5 rounded bg-zinc-50 dark:bg-zinc-800/70 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-300">Spring Framework</span>
-            <span class="text-zinc-300 dark:text-zinc-700">•</span>
-            <span class="px-1.5 py-0.5 rounded bg-zinc-50 dark:bg-zinc-800/70 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-300">JPA</span>
-            <span class="text-zinc-300 dark:text-zinc-700">•</span>
-            <span class="px-1.5 py-0.5 rounded bg-amber-50 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 border border-amber-100 dark:border-amber-800/60 font-medium">REST API</span>
-          </div>
-        </div>
+          <!-- Experience Card List -->
+          <ol class="group/list">
+            
+            <!-- Experience Item 1: FPT Software -->
+            <li class="mb-12">
+              <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                <!-- Hover Spotlight Card Background -->
+                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
 
-      </div>
+                <!-- Timeline Date (Left Column) -->
+                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="March 2024 to Present">
+                  03/2024 — PRESENT
+                </header>
 
-      <!-- Additional Projects & Experiments -->
-      <div class="mt-16 pt-12 border-t border-zinc-200/80 dark:border-zinc-800/80">
-        <div class="flex items-center justify-between mb-8">
-          <div>
-            <h3 class="font-serif-title text-2xl text-zinc-950 dark:text-zinc-100">Other Projects &amp; Experiments</h3>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Smaller tools, utilities, and academic assignments.</p>
-          </div>
-        </div>
+                <!-- Content (Right Column) -->
+                <div class="z-10 sm:col-span-6">
+                  <h3 class="font-medium leading-snug text-slate-200">
+                    <div>
+                      <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://fptsoftware.com" target="_blank" rel="noreferrer noopener" aria-label="Junior Backend Developer at FPT Software (opens in a new tab)">
+                        <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                        <span>
+                          Junior Backend Developer · 
+                          <span class="inline-block">
+                            FPT Software
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
+                          </span>
+                        </span>
+                      </a>
+                    </div>
+                    <div class="text-slate-500 text-xs font-mono mt-1" aria-hidden="true">
+                      Hanoi, Vietnam · Enterprise Business Unit
+                    </div>
+                  </h3>
 
-        <div class="space-y-3">
-          
-          <!-- Additional Project Row 1 -->
-          <div class="p-4 rounded-xl bg-white dark:bg-[#11141c] border border-zinc-200/80 dark:border-zinc-800/90 hover:border-zinc-300 dark:hover:border-zinc-700 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all group shadow-xs">
-            <div class="space-y-1">
-              <div class="flex items-center gap-2">
-                <h4 class="font-medium text-sm text-zinc-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">REST API Authentication Service</h4>
-                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400">01/2024</span>
+                  <p class="mt-2 text-sm leading-normal text-slate-400">
+                    Develop and maintain robust RESTful APIs and backend services using Java 17 and Spring Boot. Design relational database schemas across PostgreSQL and MySQL, write indexed queries for high-efficiency transactions, implement role-based access control (RBAC) with Spring Security, and write unit/integration tests with JUnit 5 and Mockito.
+                  </p>
+
+                  <!-- Tech Badges -->
+                  <ul class="mt-3 flex flex-wrap" aria-label="Technologies used">
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Java 17</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Spring Boot</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">PostgreSQL</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Spring Security</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Docker</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">JUnit 5</div>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <p class="text-xs text-zinc-500 dark:text-zinc-400">
-                Stateless token-based authentication service implemented in Spring Boot with JWT validation, password hashing (BCrypt), and refresh token rotation.
-              </p>
-            </div>
-            <div class="flex items-center gap-3 self-start sm:self-center font-mono text-xs">
-              <span class="text-zinc-400 dark:text-zinc-500 text-[11px]">Java · Spring Security · JWT</span>
-              <a class="text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-0.5" href="https://github.com/lamdayne" target="_blank" rel="noopener noreferrer">
-                <span>Code</span>
-                <span class="material-symbols-outlined text-[13px]">arrow_outward</span>
-              </a>
-            </div>
-          </div>
+            </li>
 
-          <!-- Additional Project Row 2 -->
-          <div class="p-4 rounded-xl bg-white dark:bg-[#11141c] border border-zinc-200/80 dark:border-zinc-800/90 hover:border-zinc-300 dark:hover:border-zinc-700 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all group shadow-xs">
-            <div class="space-y-1">
-              <div class="flex items-center gap-2">
-                <h4 class="font-medium text-sm text-zinc-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Personal Developer Portfolio</h4>
-                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400">10/2026</span>
+            <!-- Experience Item 2: NextTech Software Solutions -->
+            <li class="mb-12">
+              <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                <!-- Hover Spotlight Card Background -->
+                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+
+                <!-- Timeline Date (Left Column) -->
+                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="September 2023 to February 2024">
+                  09/2023 — 02/2024
+                </header>
+
+                <!-- Content (Right Column) -->
+                <div class="z-10 sm:col-span-6">
+                  <h3 class="font-medium leading-snug text-slate-200">
+                    <div>
+                      <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://nexttech.asia" target="_blank" rel="noreferrer noopener" aria-label="Software Engineering Intern at NextTech Solutions (opens in a new tab)">
+                        <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                        <span>
+                          Software Engineering Intern · 
+                          <span class="inline-block">
+                            NextTech Solutions
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
+                          </span>
+                        </span>
+                      </a>
+                    </div>
+                    <div class="text-slate-500 text-xs font-mono mt-1" aria-hidden="true">
+                      Vietnam · Web Engineering Team
+                    </div>
+                  </h3>
+
+                  <p class="mt-2 text-sm leading-normal text-slate-400">
+                    Engineered backend modules and CRUD API services for inventory and order management using Spring MVC, Spring Data JPA, and MySQL. Integrated front-end administration views with asynchronous REST endpoints and authored comprehensive OpenAPI/Swagger documentation.
+                  </p>
+
+                  <!-- Tech Badges -->
+                  <ul class="mt-3 flex flex-wrap" aria-label="Technologies used">
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Spring MVC</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">MySQL</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">JPA / Hibernate</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">JavaScript</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Git</div>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <p class="text-xs text-zinc-500 dark:text-zinc-400">
-                Editorial minimalist developer portfolio site built with pure HTML5, Tailwind CSS, and modular vanilla JavaScript. Dark mode default with zero AI-slop.
-              </p>
-            </div>
-            <div class="flex items-center gap-3 self-start sm:self-center font-mono text-xs">
-              <span class="text-zinc-400 dark:text-zinc-500 text-[11px]">HTML5 · Tailwind · JavaScript</span>
-              <a class="text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-0.5" href="https://github.com/lamdayne" target="_blank" rel="noopener noreferrer">
-                <span>Code</span>
-                <span class="material-symbols-outlined text-[13px]">arrow_outward</span>
-              </a>
-            </div>
+            </li>
+
+          </ol>
+        </section>
+
+        <!-- SECTION 3: EDUCATION (Formatted EXACTLY like Experience) -->
+        <section id="education" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Education">
+          <!-- Mobile Sticky Header -->
+          <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Education</h2>
           </div>
 
-        </div>
-      </div>
-    </section>
+          <!-- Education Card List (Same Brittany Chiang Card Format) -->
+          <ol class="group/list">
+            
+            <li class="mb-12">
+              <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                <!-- Hover Spotlight Card Background -->
+                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
 
-    <!-- SECTION 4: WORK EXPERIENCE (Real Company Context: FPT Software & Tech Solutions) -->
-    <section class="py-20 border-b border-zinc-200 dark:border-zinc-800/80" id="experience">
-      <div class="max-w-2xl mb-12">
-        <h2 class="font-serif-title text-3xl text-zinc-950 dark:text-zinc-50">Experience</h2>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Professional software engineering experience and project delivery.</p>
-      </div>
+                <!-- Timeline Date (Left Column) -->
+                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="September 2022 to March 2025">
+                  09/2022 — 03/2025
+                </header>
 
-      <div class="space-y-14">
-        
-        <!-- Experience 1: FPT Software (or Leading Software Solutions) -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-          <div class="md:col-span-4 text-xs font-mono pt-1">
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border border-blue-200/70 dark:border-blue-800/60 font-semibold">
-              03/2024 — Present
-            </span>
-            <div class="text-zinc-700 dark:text-zinc-300 font-semibold text-sm mt-2">
-              FPT Software
-            </div>
-            <div class="text-zinc-500 dark:text-zinc-400 mt-0.5 flex items-center gap-1 text-xs">
-              <span class="material-symbols-outlined text-[13px] text-zinc-400">location_on</span> Hanoi, Vietnam
-            </div>
+                <!-- Content (Right Column) -->
+                <div class="z-10 sm:col-span-6">
+                  <h3 class="font-medium leading-snug text-slate-200">
+                    <div>
+                      <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://caodang.fpt.edu.vn" target="_blank" rel="noreferrer noopener" aria-label="Software Development at FPT Polytechnic (opens in a new tab)">
+                        <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                        <span>
+                          Software Development (Information Technology) · 
+                          <span class="inline-block">
+                            FPT Polytechnic
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
+                          </span>
+                        </span>
+                      </a>
+                    </div>
+                    <div class="text-slate-500 text-xs font-mono mt-1" aria-hidden="true">
+                      Diploma Degree · Software Engineering Focus
+                    </div>
+                  </h3>
+
+                  <p class="mt-2 text-sm leading-normal text-slate-400">
+                    Comprehensive computer science and software development program covering object-oriented programming (Java OOP), data structures and algorithms, relational database systems (SQL), and enterprise web architectures. Served as an active peer mentor assisting junior classmates in core Java concepts and relational schema modeling.
+                  </p>
+
+                  <!-- Coursework & Skills Badges -->
+                  <ul class="mt-3 flex flex-wrap" aria-label="Core coursework">
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Data Structures &amp; Algorithms</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Java OOP</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Database Systems (SQL)</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Spring Framework</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Agile / Scrum</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+          </ol>
+        </section>
+
+        <!-- SECTION 4: PROJECTS -->
+        <section id="projects" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Selected projects">
+          <!-- Mobile Sticky Header -->
+          <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Projects</h2>
           </div>
-          <div class="md:col-span-8">
-            <div class="flex items-baseline justify-between mb-2">
-              <h3 class="text-lg font-semibold text-zinc-950 dark:text-zinc-100">
-                Junior Backend Developer / Intern
-              </h3>
-              <span class="text-xs font-mono font-medium px-2.5 py-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-300">
-                Enterprise BU
+
+          <!-- Projects List -->
+          <ul class="group/list">
+            
+            <!-- Project 1: EzSpend -->
+            <li class="mb-12">
+              <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+
+                <!-- Thumbnail / Year (Left Column) -->
+                <div class="z-10 sm:col-span-2 mt-1">
+                  <div class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 p-2.5 bg-slate-950/60 flex items-center justify-center text-slate-400 font-mono text-xs font-semibold">
+                    FINANCE APP
+                  </div>
+                </div>
+
+                <!-- Details (Right Column) -->
+                <div class="z-10 sm:col-span-6">
+                  <h3 class="font-medium leading-snug text-slate-200">
+                    <div>
+                      <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://github.com/lamdayne/ezspend" target="_blank" rel="noreferrer noopener" aria-label="EzSpend Personal Expense Tracker (opens in a new tab)">
+                        <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                        <span>
+                          EzSpend — Personal Expense Tracker
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
+                        </span>
+                      </a>
+                    </div>
+                  </h3>
+
+                  <p class="mt-2 text-sm leading-normal text-slate-400">
+                    A responsive personal finance tracking platform engineered for fast transaction logging, monthly categorization budgets, and visual spending analytics. Structured with clean domain services and optimized MySQL indexed queries.
+                  </p>
+
+                  <ul class="mt-3 flex flex-wrap" aria-label="Technologies used">
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Java</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Spring Boot</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">MySQL</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Chart.js</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 2: E-Commerce Laptop -->
+            <li class="mb-12">
+              <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+
+                <!-- Thumbnail / Year (Left Column) -->
+                <div class="z-10 sm:col-span-2 mt-1">
+                  <div class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 p-2.5 bg-slate-950/60 flex items-center justify-center text-slate-400 font-mono text-xs font-semibold">
+                    COMMERCE
+                  </div>
+                </div>
+
+                <!-- Details (Right Column) -->
+                <div class="z-10 sm:col-span-6">
+                  <h3 class="font-medium leading-snug text-slate-200">
+                    <div>
+                      <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://github.com/lamdayne/ecommerce-laptop" target="_blank" rel="noreferrer noopener" aria-label="E-Commerce Laptop Store (opens in a new tab)">
+                        <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                        <span>
+                          E-Commerce Laptop Store
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
+                        </span>
+                      </a>
+                    </div>
+                  </h3>
+
+                  <p class="mt-2 text-sm leading-normal text-slate-400">
+                    Full-featured hardware commerce platform handling multifaceted technical filters (CPU, RAM, GPU), transactional shopping cart checkout with strict stock deduction locks, and administrative role-based back-office controls.
+                  </p>
+
+                  <ul class="mt-3 flex flex-wrap" aria-label="Technologies used">
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Spring Boot</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Spring Security</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">PostgreSQL</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Hibernate</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 3: SneakerStore -->
+            <li class="mb-12">
+              <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+
+                <!-- Thumbnail / Year (Left Column) -->
+                <div class="z-10 sm:col-span-2 mt-1">
+                  <div class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 p-2.5 bg-slate-950/60 flex items-center justify-center text-slate-400 font-mono text-xs font-semibold">
+                    RETAIL WEB
+                  </div>
+                </div>
+
+                <!-- Details (Right Column) -->
+                <div class="z-10 sm:col-span-6">
+                  <h3 class="font-medium leading-snug text-slate-200">
+                    <div>
+                      <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://github.com/lamdayne/sneaker-store" target="_blank" rel="noreferrer noopener" aria-label="SneakerStore Retail Application (opens in a new tab)">
+                        <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                        <span>
+                          SneakerStore — Footwear Platform
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
+                        </span>
+                      </a>
+                    </div>
+                  </h3>
+
+                  <p class="mt-2 text-sm leading-normal text-slate-400">
+                    Footwear commerce engine designed around a normalized SKU variant architecture for managing complex size-color matrices, real-time availability feedback, and checkout workflows.
+                  </p>
+
+                  <ul class="mt-3 flex flex-wrap" aria-label="Technologies used">
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Java</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Spring Boot</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">MySQL</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">JavaScript</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 4: Humify -->
+            <li class="mb-12">
+              <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+
+                <!-- Thumbnail / Year (Left Column) -->
+                <div class="z-10 sm:col-span-2 mt-1">
+                  <div class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 p-2.5 bg-slate-950/60 flex items-center justify-center text-slate-400 font-mono text-xs font-semibold">
+                    HR TOOL
+                  </div>
+                </div>
+
+                <!-- Details (Right Column) -->
+                <div class="z-10 sm:col-span-6">
+                  <h3 class="font-medium leading-snug text-slate-200">
+                    <div>
+                      <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://github.com/lamdayne/humify" target="_blank" rel="noreferrer noopener" aria-label="Humify HR Workspace Suite (opens in a new tab)">
+                        <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                        <span>
+                          Humify — Human Resource Suite
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
+                        </span>
+                      </a>
+                    </div>
+                  </h3>
+
+                  <p class="mt-2 text-sm leading-normal text-slate-400">
+                    Internal workspace management application unifying employee profile directories, departmental hierarchies, daily attendance records, and automated payroll computations.
+                  </p>
+
+                  <ul class="mt-3 flex flex-wrap" aria-label="Technologies used">
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Java</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">Spring Framework</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">JPA</div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">REST API</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+          <!-- View Full GitHub Repositories Link -->
+          <div class="mt-12">
+            <a class="inline-flex items-center font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-sm font-mono" href="https://github.com/lamdayne?tab=repositories" target="_blank" rel="noreferrer noopener" aria-label="View Full Project Archive on GitHub (opens in a new tab)">
+              <span>
+                View Full Project Archive on GitHub
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:translate-x-1 motion-reduce:transition-none ml-1.5 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"></path></svg>
               </span>
-            </div>
-            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
-              Participating in designing, developing, and maintaining enterprise web applications and RESTful microservices.
-            </p>
-            <ul class="space-y-2 mb-5 text-sm text-zinc-600 dark:text-zinc-400 list-disc list-inside">
-              <li>Developed RESTful API endpoints using Java 17 and Spring Boot for customer account management and transactional workflows.</li>
-              <li>Collaborated on designing PostgreSQL and MySQL relational database tables with proper indexing, ensuring fast search queries and ACID transaction integrity.</li>
-              <li>Implemented role-based authorization rules using Spring Security to safeguard administrative and client-facing endpoints.</li>
-              <li>Wrote unit and integration tests using JUnit 5 and Mockito; actively engaged in daily Agile standups and Git pull request code reviews.</li>
-            </ul>
-            <div class="flex flex-wrap gap-2 text-xs font-mono text-zinc-600 dark:text-zinc-400">
-              <span class="px-2 py-0.5 rounded-md bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 font-medium text-zinc-800 dark:text-zinc-300">Java 17</span>
-              <span class="px-2 py-0.5 rounded-md bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 font-medium text-zinc-800 dark:text-zinc-300">Spring Boot</span>
-              <span class="px-2 py-0.5 rounded-md bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 font-medium text-zinc-800 dark:text-zinc-300">PostgreSQL</span>
-              <span class="px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800/60 text-blue-700 dark:text-blue-300 font-medium">Docker</span>
-              <span class="px-2 py-0.5 rounded-md bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-300">Postman</span>
-            </div>
+            </a>
           </div>
-        </div>
+        </section>
 
-        <!-- Experience 2: Software Development Projects / Tech Solutions -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 pt-10 border-t border-zinc-200/60 dark:border-zinc-800/60">
-          <div class="md:col-span-4 text-xs font-mono pt-1">
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700 font-semibold">
-              09/2023 — 02/2024
-            </span>
-            <div class="text-zinc-700 dark:text-zinc-300 font-semibold text-sm mt-2">
-              NextTech Software Solutions
-            </div>
-            <div class="text-zinc-500 dark:text-zinc-400 mt-0.5 flex items-center gap-1 text-xs">
-              <span class="material-symbols-outlined text-[13px] text-zinc-400">location_on</span> Vietnam
-            </div>
-          </div>
-          <div class="md:col-span-8">
-            <div class="flex items-baseline justify-between mb-2">
-              <h3 class="text-lg font-semibold text-zinc-950 dark:text-zinc-100">
-                Software Engineering Intern
-              </h3>
-              <span class="text-xs font-mono font-medium px-2.5 py-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-300">
-                Web Systems
-              </span>
-            </div>
-            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
-              Supported the development team in engineering web features, database normalization, and frontend API consumption.
-            </p>
-            <ul class="space-y-2 mb-5 text-sm text-zinc-600 dark:text-zinc-400 list-disc list-inside">
-              <li>Built backend CRUD modules using Spring MVC, Spring Data JPA, and MySQL for internal inventory tracking and product management.</li>
-              <li>Integrated client-facing UI components with backend APIs using clean asynchronous JavaScript (Fetch API/JSON).</li>
-              <li>Documented RESTful API contracts using Swagger/OpenAPI for seamless handoff between frontend and backend teammates.</li>
-            </ul>
-            <div class="flex flex-wrap gap-2 text-xs font-mono text-zinc-600 dark:text-zinc-400">
-              <span class="px-2 py-0.5 rounded-md bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 font-medium text-zinc-800 dark:text-zinc-300">Spring MVC</span>
-              <span class="px-2 py-0.5 rounded-md bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 font-medium text-zinc-800 dark:text-zinc-300">MySQL</span>
-              <span class="px-2 py-0.5 rounded-md bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 font-medium text-zinc-800 dark:text-zinc-300">JavaScript</span>
-              <span class="px-2 py-0.5 rounded-md bg-amber-50 dark:bg-amber-950/50 border border-amber-200 dark:border-amber-800/60 text-amber-800 dark:text-amber-300 font-medium">Git / GitHub</span>
-            </div>
-          </div>
-        </div>
+        <!-- SECTION 5: FOOTER (Brittany Chiang style) -->
+        <footer class="max-w-md pb-16 text-xs text-slate-500 sm:pb-0">
+          <p>
+            Crafted with focus on clean aesthetics and performance. Built with semantic <span class="text-slate-400 font-medium">HTML5</span>, <span class="text-slate-400 font-medium">Tailwind CSS</span>, and vanilla <span class="text-slate-400 font-medium">JavaScript</span>. 
+          </p>
+          <p class="mt-2">
+            Deployed on GitHub Pages. Direct inquiries: <a href="mailto:phuonglam.dev@gmail.com" class="text-slate-400 hover:text-teal-300 font-medium transition-colors">phuonglam.dev@gmail.com</a>
+          </p>
+        </footer>
 
-      </div>
-    </section>
+      </main>
 
-    <!-- SECTION 5: EDUCATION (Formatted Identically to Experience) -->
-    <section class="py-20 border-b border-zinc-200 dark:border-zinc-800/80" id="education">
-      <div class="max-w-2xl mb-12">
-        <h2 class="font-serif-title text-3xl text-zinc-950 dark:text-zinc-50">Education</h2>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Formal academic foundation in software engineering and computer science.</p>
-      </div>
-
-      <div class="space-y-14">
-        
-        <!-- Education Item -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-          <div class="md:col-span-4 text-xs font-mono pt-1">
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border border-blue-200/70 dark:border-blue-800/60 font-semibold">
-              09/2022 — 03/2025
-            </span>
-            <div class="text-zinc-700 dark:text-zinc-300 font-semibold text-sm mt-2">
-              FPT Polytechnic
-            </div>
-            <div class="text-zinc-500 dark:text-zinc-400 mt-0.5 flex items-center gap-1 text-xs">
-              <span class="material-symbols-outlined text-[13px] text-zinc-400">school</span> Vietnam
-            </div>
-          </div>
-          <div class="md:col-span-8">
-            <div class="flex items-baseline justify-between mb-2">
-              <h3 class="text-lg font-semibold text-zinc-950 dark:text-zinc-100">
-                Software Development (Information Technology)
-              </h3>
-              <span class="text-xs font-mono font-medium px-2.5 py-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-300">
-                Major Degree
-              </span>
-            </div>
-            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
-              Comprehensive computer science and software development program covering algorithms, system design, and enterprise web solutions.
-            </p>
-            <ul class="space-y-2 mb-5 text-sm text-zinc-600 dark:text-zinc-400 list-disc list-inside">
-              <li>Core studies in Data Structures &amp; Algorithms, Object-Oriented Programming (Java OOP), and Relational Database Systems (SQL).</li>
-              <li>Hands-on practical development of multi-tier web applications using Spring Framework, MySQL, and modern web architectures.</li>
-              <li>Active peer tutor supporting classmates in core Java concepts, database normalization, and Git version control workflows.</li>
-            </ul>
-            <div class="flex flex-wrap gap-2 text-xs font-mono text-zinc-600 dark:text-zinc-400">
-              <span class="px-2 py-0.5 rounded-md bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 font-medium text-zinc-800 dark:text-zinc-300">Data Structures &amp; Algorithms</span>
-              <span class="px-2 py-0.5 rounded-md bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 font-medium text-zinc-800 dark:text-zinc-300">Java OOP</span>
-              <span class="px-2 py-0.5 rounded-md bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 font-medium text-zinc-800 dark:text-zinc-300">Database Systems (SQL)</span>
-              <span class="px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800/60 text-blue-700 dark:text-blue-300 font-medium">Agile / Scrum</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION 6: CONTACT (Clean, Direct & Modern Minimalist) -->
-    <section class="py-20" id="contact">
-      <div class="max-w-3xl">
-        <h2 class="font-serif-title text-3xl text-zinc-950 dark:text-zinc-50 mb-4">Contact</h2>
-        <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
-          I am actively looking for software engineering roles and backend developer opportunities. If you have an opening or would like to discuss a project, feel free to connect directly.
-        </p>
-
-        <!-- Minimalist Direct Contact Card -->
-        <div class="p-7 rounded-xl bg-white dark:bg-[#11141c] border border-zinc-200/90 dark:border-zinc-800/90 shadow-sm space-y-6">
-          <div>
-            <div class="text-xs font-mono text-zinc-400 dark:text-zinc-500 uppercase tracking-wider mb-2">Direct Email</div>
-            <div class="flex flex-wrap items-center gap-3">
-              <a class="text-base font-medium text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="mailto:phuonglam.dev@gmail.com">
-                phuonglam.dev@gmail.com
-              </a>
-              <button id="copy-email-contact-btn" class="px-3 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300 text-xs font-mono flex items-center gap-1.5 transition-colors cursor-pointer border border-zinc-200/60 dark:border-zinc-700/60" title="Copy email address">
-                <span class="material-symbols-outlined text-[14px]">content_copy</span>
-                <span>Copy</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="pt-5 border-t border-zinc-100 dark:border-zinc-800/80">
-            <div class="text-xs font-mono text-zinc-400 dark:text-zinc-500 uppercase tracking-wider mb-3">Profiles &amp; Code</div>
-            <div class="flex flex-wrap items-center gap-4 text-sm">
-              <a class="inline-flex items-center gap-1.5 text-zinc-700 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="https://github.com/lamdayne" target="_blank" rel="noopener noreferrer">
-                <span>GitHub — @lamdayne</span>
-                <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
-              </a>
-              <span class="text-zinc-300 dark:text-zinc-700">•</span>
-              <a class="inline-flex items-center gap-1.5 text-zinc-700 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="https://linkedin.com/in/lamdayne" target="_blank" rel="noopener noreferrer">
-                <span>LinkedIn — in/lamdayne</span>
-                <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="border-t border-zinc-200 dark:border-zinc-800/80 mt-16 bg-white dark:bg-[#090a0f] transition-colors">
-    <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 dark:text-zinc-400 font-mono gap-4">
-      <div>
-        © 2026 Nguyen Hoang Phuong Lam. Software &amp; Backend Engineering.
-      </div>
-      <div class="flex items-center space-x-6">
-        <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="https://github.com/lamdayne" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="https://linkedin.com/in/lamdayne" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="mailto:phuonglam.dev@gmail.com">Email</a>
-        <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#about">Back to top ↑</a>
-      </div>
     </div>
-  </footer>
-
-  <!-- Toast Notification -->
-  <div id="copy-toast" class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-zinc-900 dark:bg-zinc-800 text-white text-xs font-mono px-4 py-2.5 rounded-lg shadow-xl border border-zinc-700 pointer-events-none">
-    <span class="material-symbols-outlined text-[16px] text-emerald-400">check_circle</span>
-    <span id="toast-message">phuonglam.dev@gmail.com copied to clipboard!</span>
   </div>
 
-  <!-- Interactive Logic: Theme Switching (Default Dark) & Email Copy -->
+  <!-- Interactive JavaScript: Spotlight Tracking & ScrollSpy -->
   <script>
-    // --- Theme Management (Default: Dark) ---
-    const themeToggleBtn = document.getElementById('theme-toggle-btn');
-    const moonIcon = document.getElementById('theme-icon-moon');
-    const sunIcon = document.getElementById('theme-icon-sun');
-
-    function getInitialTheme() {
-      const savedTheme = localStorage.getItem('portfolio-theme');
-      if (savedTheme) {
-        return savedTheme;
-      }
-      return 'dark'; // Default is Dark
-    }
-
-    function applyTheme(theme) {
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-        sunIcon.classList.remove('hidden');
-        moonIcon.classList.add('hidden');
-      } else {
-        document.documentElement.classList.remove('dark');
-        sunIcon.classList.add('hidden');
-        moonIcon.classList.remove('hidden');
-      }
-      localStorage.setItem('portfolio-theme', theme);
-    }
-
-    // Initialize Theme
-    const currentTheme = getInitialTheme();
-    applyTheme(currentTheme);
-
-    if (themeToggleBtn) {
-      themeToggleBtn.addEventListener('click', () => {
-        const isDark = document.documentElement.classList.contains('dark');
-        applyTheme(isDark ? 'light' : 'dark');
+    // --- Mouse Spotlight Effect ---
+    const spotlight = document.getElementById('spotlight');
+    if (spotlight) {
+      window.addEventListener('mousemove', (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+        spotlight.style.background = `radial-gradient(600px at ${x}px ${y}px, rgba(29, 78, 216, 0.15), transparent 80%)`;
       });
     }
 
-    // --- Copy Email Handlers ---
-    const copyHeroBtn = document.getElementById('copy-email-hero-btn');
-    const copyContactBtn = document.getElementById('copy-email-contact-btn');
-    const toast = document.getElementById('copy-toast');
-    const toastMsg = document.getElementById('toast-message');
+    // --- Active Nav Link Scroll Spy ---
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-item');
 
-    function triggerToast(msg) {
-      if (!toast) return;
-      toastMsg.textContent = msg;
-      toast.classList.add('show');
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 2500);
-    }
+    function updateActiveNav() {
+      let currentSectionId = '';
+      const scrollPosition = window.scrollY + 200;
 
-    function copyEmail() {
-      const email = 'phuonglam.dev@gmail.com';
-      navigator.clipboard.writeText(email).then(() => {
-        triggerToast('phuonglam.dev@gmail.com copied to clipboard!');
-      }).catch(() => {
-        triggerToast('phuonglam.dev@gmail.com');
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      if (!currentSectionId && window.scrollY < 100) {
+        currentSectionId = 'about';
+      }
+
+      navItems.forEach((item) => {
+        if (item.getAttribute('data-target') === currentSectionId) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
       });
     }
 
-    if (copyHeroBtn) copyHeroBtn.addEventListener('click', copyEmail);
-    if (copyContactBtn) copyContactBtn.addEventListener('click', copyEmail);
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav();
   </script>
 </body>
 </html>
