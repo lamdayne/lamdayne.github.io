@@ -31,22 +31,13 @@ const portfolioData = {
   // --- Kinh nghiệm làm việc (Experience) ---
   experiences: [
     {
-      period: "03/2024 — PRESENT",
-      role: "Junior Backend Developer",
-      company: "FPT Software",
-      companyUrl: "https://fptsoftware.com",
-      location: "Hanoi, Vietnam · Enterprise Business Unit",
-      description: "Develop and maintain robust RESTful APIs and backend services using Java 17 and Spring Boot. Design relational database schemas across PostgreSQL and MySQL, write indexed queries for high-efficiency transactions, implement role-based access control (RBAC) with Spring Security, and write unit/integration tests with JUnit 5 and Mockito.",
-      tags: ["Java 17", "Spring Boot", "PostgreSQL", "Spring Security", "Docker", "JUnit 5"]
-    },
-    {
-      period: "09/2023 — 02/2024",
+      period: "04/2026 — 07/2026",
       role: "Software Engineering Intern",
-      company: "NextTech Solutions",
-      companyUrl: "https://nexttech.asia",
-      location: "Vietnam · Web Engineering Team",
-      description: "Engineered backend modules and CRUD API services for inventory and order management using Spring MVC, Spring Data JPA, and MySQL. Integrated front-end administration views with asynchronous REST endpoints and authored comprehensive OpenAPI/Swagger documentation.",
-      tags: ["Spring MVC", "MySQL", "JPA / Hibernate", "JavaScript", "Git"]
+      company: "iDev",
+      companyUrl: "#",
+      location: "Ho Chi Minh City, Viet Nam",
+      description: "Engineered backend modules and CRUD API services for employee and attendance management using Spring MVC, Spring Data JPA, and PostgreSQL. Integrated front-end administration views with asynchronous REST endpoints and authored comprehensive OpenAPI/Swagger documentation.",
+      tags: ["Spring Boot", "PostgreSQL", "JPA / Hibernate", "JavaScript", "Git"]
     }
   ],
 
@@ -54,7 +45,7 @@ const portfolioData = {
   educations: [
     {
       period: "08/2024 — 08/2026",
-      degree: "Software Development (Information Technology)",
+      degree: "Software Development",
       school: "FPT Polytechnic College",
       schoolUrl: "https://caodang.fpt.edu.vn",
       location: "Diploma Degree · Software Engineering Focus",
@@ -69,16 +60,16 @@ const portfolioData = {
   // - liveUrl: Link đến trang web đã deploy (sẽ hiển thị icon external mở live). Nếu chưa có thì để null!
   projects: [
     {
-      title: "EzSpend — Personal Expense Tracker",
-      badge: "FINANCE APP",
-      description: "A responsive personal finance tracking platform engineered for fast transaction logging, monthly categorization budgets, and visual spending analytics. Structured with clean domain services and optimized MySQL indexed queries.",
-      githubUrl: "https://github.com/lamdayne/ezspend",
-      liveUrl: null, // Thay bằng link demo live nếu có, ví dụ: "https://ezspend.vercel.app"
-      tags: ["Java", "Spring Boot", "MySQL", "Chart.js"]
+      title: "Humify — Human Resource Suite",
+      badge: "HRM",
+      description: "Internal workspace management application unifying employee profile directories, departmental hierarchies, daily attendance records, and automated payroll computations.",
+      githubUrl: "https://github.com/lamdayne/humify",
+      liveUrl: "https://humify.site",
+      tags: ["Java", "Spring Framework", "JPA", "REST API", "Postgres", "Docker", "Cloudflare Tunnel"]
     },
     {
       title: "E-Commerce Laptop Store",
-      badge: "COMMERCE",
+      badge: "ECOMMERCE",
       description: "Full-featured hardware commerce platform handling multifaceted technical filters (CPU, RAM, GPU), transactional shopping cart checkout with strict stock deduction locks, and administrative role-based back-office controls.",
       githubUrl: "https://github.com/lamdayne/ecommerce-laptop",
       liveUrl: null,
@@ -86,19 +77,11 @@ const portfolioData = {
     },
     {
       title: "SneakerStore — Footwear Platform",
-      badge: "RETAIL WEB",
+      badge: "ECOMMERCE",
       description: "Footwear commerce engine designed around a normalized SKU variant architecture for managing complex size-color matrices, real-time availability feedback, and checkout workflows.",
       githubUrl: "https://github.com/lamdayne/sneaker-store",
       liveUrl: null,
       tags: ["Java", "Spring Boot", "MySQL", "JavaScript"]
-    },
-    {
-      title: "Humify — Human Resource Suite",
-      badge: "HR TOOL",
-      description: "Internal workspace management application unifying employee profile directories, departmental hierarchies, daily attendance records, and automated payroll computations.",
-      githubUrl: "https://github.com/lamdayne/humify",
-      liveUrl: null,
-      tags: ["Java", "Spring Framework", "JPA", "REST API"]
     }
   ]
 };
