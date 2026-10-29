@@ -18,7 +18,7 @@
 
   <!-- Google Fonts: Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS -->
@@ -79,14 +79,14 @@
            =================================================================== -->
       <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
         <div>
-          <!-- Title & Subtitle -->
+          <!-- Title & Subtitle (Auto-filled from data.js) -->
           <h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
-            <a href="#">Nguyen Hoang Phuong Lam</a>
+            <a href="#" id="hero-name">Nguyen Hoang Phuong Lam</a>
           </h1>
-          <h2 class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
+          <h2 class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl" id="hero-title">
             Software Engineer / Backend Developer
           </h2>
-          <p class="mt-4 max-w-xs leading-normal text-slate-400">
+          <p class="mt-4 max-w-xs leading-normal text-slate-400" id="hero-tagline">
             I build reliable, modular backend services, clean RESTful APIs, and modern web applications.
           </p>
 
@@ -125,7 +125,7 @@
         <ul class="ml-1 mt-8 flex items-center gap-5" aria-label="Social media">
           <!-- GitHub -->
           <li class="mr-5 text-xs">
-            <a class="block hover:text-slate-200 transition-colors" href="https://github.com/lamdayne" target="_blank" rel="noreferrer noopener" aria-label="GitHub (opens in a new tab)" title="GitHub: @lamdayne">
+            <a id="social-github" class="block hover:text-slate-200 transition-colors" href="https://github.com/lamdayne" target="_blank" rel="noreferrer noopener" aria-label="GitHub (opens in a new tab)" title="GitHub: @lamdayne">
               <span class="sr-only">GitHub</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="h-6 w-6" aria-hidden="true">
                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
@@ -135,7 +135,7 @@
 
           <!-- LinkedIn -->
           <li class="mr-5 text-xs">
-            <a class="block hover:text-slate-200 transition-colors" href="https://linkedin.com/in/lamdayne" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn (opens in a new tab)" title="LinkedIn: in/lamdayne">
+            <a id="social-linkedin" class="block hover:text-slate-200 transition-colors" href="https://linkedin.com/in/lamdayne" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn (opens in a new tab)" title="LinkedIn: in/lamdayne">
               <span class="sr-only">LinkedIn</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true">
                 <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
@@ -145,7 +145,7 @@
 
           <!-- Email -->
           <li class="mr-5 text-xs">
-            <a class="block hover:text-slate-200 transition-colors" href="mailto:phuonglam.dev@gmail.com" aria-label="Email (opens in mail client)" title="Email: phuonglam.dev@gmail.com">
+            <a id="social-email" class="block hover:text-slate-200 transition-colors" href="mailto:phuonglam.dev@gmail.com" aria-label="Email (opens in mail client)" title="Email: phuonglam.dev@gmail.com">
               <span class="sr-only">Email</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
                 <rect width="20" height="16" x="2" y="4" rx="2"></rect>
@@ -169,15 +169,17 @@
             <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">About</h2>
           </div>
 
-          <p class="mb-4 text-slate-400 leading-relaxed">
-            I am a software engineer with a deep interest in backend architecture, database systems, and building clean web services. My journey started with exploring object-oriented programming in Java and grew through engineering full-stack web platforms and data pipelines.
-          </p>
-          <p class="mb-4 text-slate-400 leading-relaxed">
-            Currently, I focus on building resilient RESTful microservices with <span class="text-slate-200 font-medium">Java</span>, <span class="text-slate-200 font-medium">Spring Boot</span>, and relational databases like <span class="text-slate-200 font-medium">PostgreSQL</span> and <span class="text-slate-200 font-medium">MySQL</span>. I enjoy designing normalized database schemas, optimizing query indexes, and keeping application architecture maintainable and testable.
-          </p>
-          <p class="text-slate-400 leading-relaxed">
-            When I'm not writing code or reading technical documentation, you can find me exploring open-source repositories, refining developer tools, or sharing technical concepts with peers.
-          </p>
+          <div id="about-paragraphs-container">
+            <p class="mb-4 text-slate-400 leading-relaxed">
+              I am a software engineer with a deep interest in backend architecture, database systems, and building clean web services. My journey started with exploring object-oriented programming in Java and grew through engineering full-stack web platforms and data pipelines.
+            </p>
+            <p class="mb-4 text-slate-400 leading-relaxed">
+              Currently, I focus on building resilient RESTful microservices with <span class="text-slate-200 font-medium">Java</span>, <span class="text-slate-200 font-medium">Spring Boot</span>, and relational databases like <span class="text-slate-200 font-medium">PostgreSQL</span> and <span class="text-slate-200 font-medium">MySQL</span>. I enjoy designing normalized database schemas, optimizing query indexes, and keeping application architecture maintainable and testable.
+            </p>
+            <p class="text-slate-400 leading-relaxed">
+              When I'm not writing code or reading technical documentation, you can find me exploring open-source repositories, refining developer tools, or sharing technical concepts with peers.
+            </p>
+          </div>
         </section>
 
         <!-- SECTION 2: EXPERIENCE -->
@@ -187,22 +189,22 @@
             <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Experience</h2>
           </div>
 
-          <!-- Experience Card List -->
-          <ol class="group/list">
+          <!-- Experience Card List (Container populated by data.js) -->
+          <ol id="experience-list" class="group/list">
             
             <!-- Experience Item 1: FPT Software -->
             <li class="mb-12">
-              <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+              <div class="group relative flex flex-col sm:flex-row sm:gap-6 pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
                 <!-- Hover Spotlight Card Background -->
                 <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
 
-                <!-- Timeline Date (Left Column) -->
-                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="March 2024 to Present">
+                <!-- Timeline Date (Horizontal on single line: sm:w-40 whitespace-nowrap) -->
+                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 shrink-0 sm:w-40 whitespace-nowrap" aria-label="March 2024 to Present">
                   03/2024 — PRESENT
                 </header>
 
                 <!-- Content (Right Column) -->
-                <div class="z-10 sm:col-span-6">
+                <div class="z-10 flex-1">
                   <h3 class="font-medium leading-snug text-slate-200">
                     <div>
                       <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://fptsoftware.com" target="_blank" rel="noreferrer noopener" aria-label="Junior Backend Developer at FPT Software (opens in a new tab)">
@@ -252,17 +254,17 @@
 
             <!-- Experience Item 2: NextTech Software Solutions -->
             <li class="mb-12">
-              <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+              <div class="group relative flex flex-col sm:flex-row sm:gap-6 pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
                 <!-- Hover Spotlight Card Background -->
                 <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
 
-                <!-- Timeline Date (Left Column) -->
-                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="September 2023 to February 2024">
+                <!-- Timeline Date (Horizontal on single line: sm:w-40 whitespace-nowrap) -->
+                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 shrink-0 sm:w-40 whitespace-nowrap" aria-label="September 2023 to February 2024">
                   09/2023 — 02/2024
                 </header>
 
                 <!-- Content (Right Column) -->
-                <div class="z-10 sm:col-span-6">
+                <div class="z-10 flex-1">
                   <h3 class="font-medium leading-snug text-slate-200">
                     <div>
                       <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://nexttech.asia" target="_blank" rel="noreferrer noopener" aria-label="Software Engineering Intern at NextTech Solutions (opens in a new tab)">
@@ -317,21 +319,21 @@
             <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Education</h2>
           </div>
 
-          <!-- Education Card List (Same Brittany Chiang Card Format) -->
-          <ol class="group/list">
+          <!-- Education Card List (Container populated by data.js) -->
+          <ol id="education-list" class="group/list">
             
             <li class="mb-12">
-              <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+              <div class="group relative flex flex-col sm:flex-row sm:gap-6 pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
                 <!-- Hover Spotlight Card Background -->
                 <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
 
-                <!-- Timeline Date (Left Column) -->
-                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="September 2022 to March 2025">
+                <!-- Timeline Date (Horizontal on single line: sm:w-40 whitespace-nowrap) -->
+                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 shrink-0 sm:w-40 whitespace-nowrap" aria-label="September 2022 to March 2025">
                   09/2022 — 03/2025
                 </header>
 
                 <!-- Content (Right Column) -->
-                <div class="z-10 sm:col-span-6">
+                <div class="z-10 flex-1">
                   <h3 class="font-medium leading-snug text-slate-200">
                     <div>
                       <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://caodang.fpt.edu.vn" target="_blank" rel="noreferrer noopener" aria-label="Software Development at FPT Polytechnic (opens in a new tab)">
@@ -386,23 +388,23 @@
             <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Projects</h2>
           </div>
 
-          <!-- Projects List -->
-          <ul class="group/list">
+          <!-- Projects List (Container populated by data.js) -->
+          <ul id="projects-list" class="group/list">
             
             <!-- Project 1: EzSpend -->
             <li class="mb-12">
-              <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+              <div class="group relative flex flex-col sm:flex-row sm:gap-6 pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
                 <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
 
-                <!-- Thumbnail / Year (Left Column) -->
-                <div class="z-10 sm:col-span-2 mt-1">
-                  <div class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 p-2.5 bg-slate-950/60 flex items-center justify-center text-slate-400 font-mono text-xs font-semibold">
+                <!-- Thumbnail / Badge (Left Column: sm:w-40) -->
+                <div class="z-10 shrink-0 sm:w-40 mt-1">
+                  <div class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 p-2.5 bg-slate-950/60 flex items-center justify-center text-slate-400 font-mono text-xs font-semibold whitespace-nowrap">
                     FINANCE APP
                   </div>
                 </div>
 
                 <!-- Details (Right Column) -->
-                <div class="z-10 sm:col-span-6">
+                <div class="z-10 flex-1">
                   <h3 class="font-medium leading-snug text-slate-200">
                     <div>
                       <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://github.com/lamdayne/ezspend" target="_blank" rel="noreferrer noopener" aria-label="EzSpend Personal Expense Tracker (opens in a new tab)">
@@ -439,18 +441,18 @@
 
             <!-- Project 2: E-Commerce Laptop -->
             <li class="mb-12">
-              <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+              <div class="group relative flex flex-col sm:flex-row sm:gap-6 pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
                 <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
 
-                <!-- Thumbnail / Year (Left Column) -->
-                <div class="z-10 sm:col-span-2 mt-1">
-                  <div class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 p-2.5 bg-slate-950/60 flex items-center justify-center text-slate-400 font-mono text-xs font-semibold">
+                <!-- Thumbnail / Badge (Left Column: sm:w-40) -->
+                <div class="z-10 shrink-0 sm:w-40 mt-1">
+                  <div class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 p-2.5 bg-slate-950/60 flex items-center justify-center text-slate-400 font-mono text-xs font-semibold whitespace-nowrap">
                     COMMERCE
                   </div>
                 </div>
 
                 <!-- Details (Right Column) -->
-                <div class="z-10 sm:col-span-6">
+                <div class="z-10 flex-1">
                   <h3 class="font-medium leading-snug text-slate-200">
                     <div>
                       <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://github.com/lamdayne/ecommerce-laptop" target="_blank" rel="noreferrer noopener" aria-label="E-Commerce Laptop Store (opens in a new tab)">
@@ -487,18 +489,18 @@
 
             <!-- Project 3: SneakerStore -->
             <li class="mb-12">
-              <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+              <div class="group relative flex flex-col sm:flex-row sm:gap-6 pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
                 <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
 
-                <!-- Thumbnail / Year (Left Column) -->
-                <div class="z-10 sm:col-span-2 mt-1">
-                  <div class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 p-2.5 bg-slate-950/60 flex items-center justify-center text-slate-400 font-mono text-xs font-semibold">
+                <!-- Thumbnail / Badge (Left Column: sm:w-40) -->
+                <div class="z-10 shrink-0 sm:w-40 mt-1">
+                  <div class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 p-2.5 bg-slate-950/60 flex items-center justify-center text-slate-400 font-mono text-xs font-semibold whitespace-nowrap">
                     RETAIL WEB
                   </div>
                 </div>
 
                 <!-- Details (Right Column) -->
-                <div class="z-10 sm:col-span-6">
+                <div class="z-10 flex-1">
                   <h3 class="font-medium leading-snug text-slate-200">
                     <div>
                       <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://github.com/lamdayne/sneaker-store" target="_blank" rel="noreferrer noopener" aria-label="SneakerStore Retail Application (opens in a new tab)">
@@ -535,18 +537,18 @@
 
             <!-- Project 4: Humify -->
             <li class="mb-12">
-              <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+              <div class="group relative flex flex-col sm:flex-row sm:gap-6 pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
                 <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
 
-                <!-- Thumbnail / Year (Left Column) -->
-                <div class="z-10 sm:col-span-2 mt-1">
-                  <div class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 p-2.5 bg-slate-950/60 flex items-center justify-center text-slate-400 font-mono text-xs font-semibold">
+                <!-- Thumbnail / Badge (Left Column: sm:w-40) -->
+                <div class="z-10 shrink-0 sm:w-40 mt-1">
+                  <div class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 p-2.5 bg-slate-950/60 flex items-center justify-center text-slate-400 font-mono text-xs font-semibold whitespace-nowrap">
                     HR TOOL
                   </div>
                 </div>
 
                 <!-- Details (Right Column) -->
-                <div class="z-10 sm:col-span-6">
+                <div class="z-10 flex-1">
                   <h3 class="font-medium leading-snug text-slate-200">
                     <div>
                       <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://github.com/lamdayne/humify" target="_blank" rel="noreferrer noopener" aria-label="Humify HR Workspace Suite (opens in a new tab)">
@@ -600,7 +602,7 @@
             Crafted with focus on clean aesthetics and performance. Built with semantic <span class="text-slate-400 font-medium">HTML5</span>, <span class="text-slate-400 font-medium">Tailwind CSS</span>, and vanilla <span class="text-slate-400 font-medium">JavaScript</span>. 
           </p>
           <p class="mt-2">
-            Deployed on GitHub Pages. Direct inquiries: <a href="mailto:phuonglam.dev@gmail.com" class="text-slate-400 hover:text-teal-300 font-medium transition-colors">phuonglam.dev@gmail.com</a>
+            All data can be easily customized in <code class="text-slate-400 font-mono">js/data.js</code>. Direct inquiries: <a href="mailto:phuonglam.dev@gmail.com" class="text-slate-400 hover:text-teal-300 font-medium transition-colors">phuonglam.dev@gmail.com</a>
           </p>
         </footer>
 
@@ -609,8 +611,193 @@
     </div>
   </div>
 
-  <!-- Interactive JavaScript: Spotlight Tracking & ScrollSpy -->
+  <!-- Load Separate Data File -->
+  <script src="js/data.js"></script>
+
+  <!-- Interactive JavaScript: Dynamic Content Renderer, Spotlight Tracking & ScrollSpy -->
   <script>
+    // --- Render Content Dynamically from data.js if available ---
+    function renderPortfolioFromData() {
+      if (typeof portfolioData === 'undefined') return;
+
+      const { personal, experiences, educations, projects } = portfolioData;
+
+      // 1. Personal Details
+      if (personal) {
+        if (personal.name) {
+          const heroName = document.getElementById('hero-name');
+          if (heroName) heroName.textContent = personal.name;
+        }
+        if (personal.title) {
+          const heroTitle = document.getElementById('hero-title');
+          if (heroTitle) heroTitle.textContent = personal.title;
+        }
+        if (personal.tagline) {
+          const heroTagline = document.getElementById('hero-tagline');
+          if (heroTagline) heroTagline.textContent = personal.tagline;
+        }
+        if (personal.githubUrl) {
+          const githubLink = document.getElementById('social-github');
+          if (githubLink) githubLink.href = personal.githubUrl;
+        }
+        if (personal.linkedinUrl) {
+          const linkedinLink = document.getElementById('social-linkedin');
+          if (linkedinLink) linkedinLink.href = personal.linkedinUrl;
+        }
+        if (personal.email) {
+          const emailLink = document.getElementById('social-email');
+          if (emailLink) emailLink.href = `mailto:${personal.email}`;
+        }
+        if (personal.aboutParagraphs && personal.aboutParagraphs.length > 0) {
+          const aboutContainer = document.getElementById('about-paragraphs-container');
+          if (aboutContainer) {
+            aboutContainer.innerHTML = personal.aboutParagraphs
+              .map(p => `<p class="mb-4 text-slate-400 leading-relaxed">${p}</p>`)
+              .join('');
+          }
+        }
+      }
+
+      // 2. Render Experiences (with horizontal single-line date: sm:w-40 whitespace-nowrap)
+      const expList = document.getElementById('experience-list');
+      if (expList && experiences && experiences.length > 0) {
+        expList.innerHTML = experiences.map(exp => `
+          <li class="mb-12">
+            <div class="group relative flex flex-col sm:flex-row sm:gap-6 pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+              <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+
+              <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 shrink-0 sm:w-40 whitespace-nowrap" aria-label="${exp.period}">
+                ${exp.period}
+              </header>
+
+              <div class="z-10 flex-1">
+                <h3 class="font-medium leading-snug text-slate-200">
+                  <div>
+                    <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="${exp.companyUrl || '#'}" target="_blank" rel="noreferrer noopener" aria-label="${exp.role} at ${exp.company}">
+                      <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                      <span>
+                        ${exp.role} · 
+                        <span class="inline-block">
+                          ${exp.company}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
+                        </span>
+                      </span>
+                    </a>
+                  </div>
+                  ${exp.location ? `<div class="text-slate-500 text-xs font-mono mt-1" aria-hidden="true">${exp.location}</div>` : ''}
+                </h3>
+
+                <p class="mt-2 text-sm leading-normal text-slate-400">
+                  ${exp.description}
+                </p>
+
+                <ul class="mt-3 flex flex-wrap" aria-label="Technologies used">
+                  ${(exp.tags || []).map(tag => `
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">${tag}</div>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+            </div>
+          </li>
+        `).join('');
+      }
+
+      // 3. Render Educations (Formatted IDENTICALLY to Experience)
+      const eduList = document.getElementById('education-list');
+      if (eduList && educations && educations.length > 0) {
+        eduList.innerHTML = educations.map(edu => `
+          <li class="mb-12">
+            <div class="group relative flex flex-col sm:flex-row sm:gap-6 pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+              <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+
+              <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 shrink-0 sm:w-40 whitespace-nowrap" aria-label="${edu.period}">
+                ${edu.period}
+              </header>
+
+              <div class="z-10 flex-1">
+                <h3 class="font-medium leading-snug text-slate-200">
+                  <div>
+                    <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="${edu.schoolUrl || '#'}" target="_blank" rel="noreferrer noopener" aria-label="${edu.degree} at ${edu.school}">
+                      <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                      <span>
+                        ${edu.degree} · 
+                        <span class="inline-block">
+                          ${edu.school}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
+                        </span>
+                      </span>
+                    </a>
+                  </div>
+                  ${edu.location ? `<div class="text-slate-500 text-xs font-mono mt-1" aria-hidden="true">${edu.location}</div>` : ''}
+                </h3>
+
+                <p class="mt-2 text-sm leading-normal text-slate-400">
+                  ${edu.description}
+                </p>
+
+                <ul class="mt-3 flex flex-wrap" aria-label="Core coursework">
+                  ${(edu.tags || []).map(tag => `
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">${tag}</div>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+            </div>
+          </li>
+        `).join('');
+      }
+
+      // 4. Render Projects
+      const projList = document.getElementById('projects-list');
+      if (projList && projects && projects.length > 0) {
+        projList.innerHTML = projects.map(proj => `
+          <li class="mb-12">
+            <div class="group relative flex flex-col sm:flex-row sm:gap-6 pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+              <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+
+              <div class="z-10 shrink-0 sm:w-40 mt-1">
+                <div class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 p-2.5 bg-slate-950/60 flex items-center justify-center text-slate-400 font-mono text-xs font-semibold whitespace-nowrap">
+                  ${proj.badge || 'PROJECT'}
+                </div>
+              </div>
+
+              <div class="z-10 flex-1">
+                <h3 class="font-medium leading-snug text-slate-200">
+                  <div>
+                    <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="${proj.url || '#'}" target="_blank" rel="noreferrer noopener" aria-label="${proj.title}">
+                      <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                      <span>
+                        ${proj.title}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
+                      </span>
+                    </a>
+                  </div>
+                </h3>
+
+                <p class="mt-2 text-sm leading-normal text-slate-400">
+                  ${proj.description}
+                </p>
+
+                <ul class="mt-3 flex flex-wrap" aria-label="Technologies used">
+                  ${(proj.tags || []).map(tag => `
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 font-mono">${tag}</div>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+            </div>
+          </li>
+        `).join('');
+      }
+    }
+
+    // Run dynamic rendering
+    renderPortfolioFromData();
+
     // --- Mouse Spotlight Effect ---
     const spotlight = document.getElementById('spotlight');
     if (spotlight) {
