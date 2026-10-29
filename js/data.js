@@ -53,44 +53,51 @@ const portfolioData = {
   // --- Học vấn (Education) ---
   educations: [
     {
-      period: "09/2022 — 03/2025",
+      period: "08/2024 — 08/2026",
       degree: "Software Development (Information Technology)",
-      school: "FPT Polytechnic",
+      school: "FPT Polytechnic College",
       schoolUrl: "https://caodang.fpt.edu.vn",
       location: "Diploma Degree · Software Engineering Focus",
-      description: "Comprehensive computer science and software development program covering object-oriented programming (Java OOP), data structures and algorithms, relational database systems (SQL), and enterprise web architectures. Served as an active peer mentor assisting junior classmates in core Java concepts and relational schema modeling.",
-      tags: ["Data Structures & Algorithms", "Java OOP", "Database Systems (SQL)", "Spring Framework", "Agile / Scrum"]
+      description: "Comprehensive computer science and software development program covering object-oriented programming (Java OOP), relational database systems (SQL), and enterprise web architectures. Served as an active peer mentor assisting junior classmates in core Java concepts and relational schema modeling.",
+      tags: ["Java OOP", "Database Systems (SQL)", "Spring Framework", "Agile / Scrum"]
     }
   ],
 
   // --- Dự án tiêu biểu (Projects) ---
+  // Mỗi dự án có thể có:
+  // - githubUrl: Link đến GitHub repository (sẽ hiển thị icon GitHub)
+  // - liveUrl: Link đến trang web đã deploy (sẽ hiển thị icon external mở live). Nếu chưa có thì để null!
   projects: [
     {
       title: "EzSpend — Personal Expense Tracker",
       badge: "FINANCE APP",
       description: "A responsive personal finance tracking platform engineered for fast transaction logging, monthly categorization budgets, and visual spending analytics. Structured with clean domain services and optimized MySQL indexed queries.",
-      url: "https://github.com/lamdayne/ezspend",
+      githubUrl: "https://github.com/lamdayne/ezspend",
+      liveUrl: null, // Thay bằng link demo live nếu có, ví dụ: "https://ezspend.vercel.app"
       tags: ["Java", "Spring Boot", "MySQL", "Chart.js"]
     },
     {
       title: "E-Commerce Laptop Store",
       badge: "COMMERCE",
       description: "Full-featured hardware commerce platform handling multifaceted technical filters (CPU, RAM, GPU), transactional shopping cart checkout with strict stock deduction locks, and administrative role-based back-office controls.",
-      url: "https://github.com/lamdayne/ecommerce-laptop",
+      githubUrl: "https://github.com/lamdayne/ecommerce-laptop",
+      liveUrl: null,
       tags: ["Spring Boot", "Spring Security", "PostgreSQL", "Hibernate"]
     },
     {
       title: "SneakerStore — Footwear Platform",
       badge: "RETAIL WEB",
       description: "Footwear commerce engine designed around a normalized SKU variant architecture for managing complex size-color matrices, real-time availability feedback, and checkout workflows.",
-      url: "https://github.com/lamdayne/sneaker-store",
+      githubUrl: "https://github.com/lamdayne/sneaker-store",
+      liveUrl: null,
       tags: ["Java", "Spring Boot", "MySQL", "JavaScript"]
     },
     {
       title: "Humify — Human Resource Suite",
       badge: "HR TOOL",
       description: "Internal workspace management application unifying employee profile directories, departmental hierarchies, daily attendance records, and automated payroll computations.",
-      url: "https://github.com/lamdayne/humify",
+      githubUrl: "https://github.com/lamdayne/humify",
+      liveUrl: null,
       tags: ["Java", "Spring Framework", "JPA", "REST API"]
     }
   ]
