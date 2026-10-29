@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nguyen Hoang Phuong Lam · Software Engineer</title>
+  
+  <meta name="description" content="Software Engineer portfolio of Nguyen Hoang Phuong Lam (@lamdayne). Specializing in backend systems, Java, Spring Boot, database architecture, and modern web applications.">
+  <meta name="author" content="Nguyen Hoang Phuong Lam">
+  <meta name="keywords" content="Nguyen Hoang Phuong Lam, lamdayne, Software Engineer, Backend Developer, Java, Spring Boot, MySQL, PostgreSQL, Portfolio">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nguyen Hoang Phuong Lam · Software Engineer">
+  <meta property="og:description" content="Portfolio of Nguyen Hoang Phuong Lam (@lamdayne). High-signal software engineering, Java & Spring Boot backend systems.">
+  <meta property="og:site_name" content="Nguyen Hoang Phuong Lam Portfolio">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Glass Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="#" class="brand" aria-label="Nguyen Hoang Phuong Lam Homepage">
+        <span class="brand-monogram">PL</span>
+        <span class="brand-text">Nguyen Lam</span>
+        <span class="brand-status">
+          <span class="status-indicator"></span>
+          <span data-i18n="statusAvailable">Available</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#projects" class="nav-link" data-i18n="navProjects">Projects</a></li>
+          <li><a href="#experience" class="nav-link" data-i18n="navExperience">Experience</a></li>
+          <li><a href="#education" class="nav-link" data-i18n="navEducation">Education</a></li>
+          <li><a href="#stack" class="nav-link" data-i18n="navStack">Stack</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="navContact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Utilities -->
+      <div class="nav-actions">
+        <!-- Command Palette Trigger -->
+        <button type="button" class="action-btn js-open-cmd" title="Command Palette (Ctrl+K / Cmd+K)" aria-label="Open Command Palette">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Bilingual Switcher (EN / VI) -->
+        <button type="button" id="lang-toggle" class="action-btn lang-btn" title="Toggle Language (EN / VI)" aria-label="Toggle Language">
+          VI
+        </button>
+
+        <!-- Theme Toggle (Dark / Light) -->
+        <button type="button" id="theme-toggle" class="action-btn" title="Toggle Theme" aria-label="Toggle Theme">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <!-- Status & Badge Row -->
+        <div class="badge-row">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            <span data-i18n="statusAvailable">Available for new roles</span>
+          </div>
+          <div class="badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span data-i18n="basedIn">Vietnam · UTC+7</span>
+          </div>
+        </div>
+
+        <!-- Name & Headline -->
+        <h1 class="hero-title">Nguyen Hoang Phuong Lam</h1>
+        
+        <p class="hero-subtitle" data-i18n="roleTagline">
+          Software Engineer specializing in robust backend systems, clean architecture, and modern web applications.
+        </p>
+
+        <!-- CTAs & Social Links -->
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary" data-i18n="getInTouch">
+            Get in touch
+          </a>
+          <a href="#projects" class="btn btn-secondary" data-i18n="viewProjects">
+            View Projects
+          </a>
+          <button type="button" class="btn btn-secondary js-copy-email" data-i18n="copyEmail">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            Copy email
+          </button>
+
+          <div class="social-links">
+            <a href="https://github.com/lamdayne" target="_blank" rel="noopener noreferrer" class="social-pill" title="GitHub Profile">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>lamdayne</span>
+            </a>
+
+            <a href="https://linkedin.com/in/lamdayne" target="_blank" rel="noopener noreferrer" class="social-pill" title="LinkedIn Profile">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              <span>lamdayne</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Engineering Pillars (3 Minimalist Cards) -->
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+              </svg>
+            </div>
+            <h3 class="pillar-title" data-i18n="pillar1Title">Backend & Systems</h3>
+            <p class="pillar-desc" data-i18n="pillar1Desc">
+              Designing resilient RESTful services, transactional logic, and clean modular domain architecture in Java & Spring Boot.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </div>
+            <h3 class="pillar-title" data-i18n="pillar2Title">Data & Performance</h3>
+            <p class="pillar-desc" data-i18n="pillar2Desc">
+              Schema design, relational indexing (MySQL, PostgreSQL), query optimization, and reliable state management.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="pillar-title" data-i18n="pillar3Title">Minimalist Craft</h3>
+            <p class="pillar-desc" data-i18n="pillar3Desc">
+              Obsessed with clean code, zero unnecessary fluff, maintainable structures, and intuitive developer experiences.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+      <div class="section-header">
+        <span class="section-label" data-i18n="projectsLabel">Selected Work</span>
+        <h2 class="section-title" data-i18n="projectsTitle">Engineered projects with tangible code and architecture.</h2>
+        <p class="section-desc" data-i18n="projectsDesc">
+          Full-stack and backend systems built with focus on clean architecture, performance, and clean maintainability.
+        </p>
+      </div>
+
+      <!-- Category Filter Bar -->
+      <div class="projects-filter-bar">
+        <div class="filter-pills" role="tablist">
+          <button type="button" class="filter-btn active" data-filter="all" data-i18n="filterAll">All</button>
+          <button type="button" class="filter-btn" data-filter="backend" data-i18n="filterBackend">Backend / Fullstack</button>
+          <button type="button" class="filter-btn" data-filter="web" data-i18n="filterWeb">Web Apps</button>
+        </div>
+        <span class="projects-counter">4 Featured Repositories</span>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="projects-grid">
+        
+        <!-- Project 1: EzSpend -->
+        <article class="project-card" data-category="backend web">
+          <div class="project-top">
+            <div class="project-headline">
+              <span class="project-type-tag">FinTech & Tooling</span>
+              <h3 class="project-name">EzSpend</h3>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/lamdayne/ezspend" target="_blank" rel="noopener noreferrer" class="icon-link" title="View Source on GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <p class="project-description">
+            Personal finance tracking platform engineered for fast transaction logging, monthly categorization budgets, and visual spending analytics.
+          </p>
+
+          <ul class="project-highlights">
+            <li class="project-highlight-item">Sub-50ms analytics aggregation with indexed MySQL queries</li>
+            <li class="project-highlight-item">Budget threshold monitor with visual warning system</li>
+            <li class="project-highlight-item">Clean layered domain architecture in Java & Spring Boot</li>
+          </ul>
+
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Spring Boot</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">REST API</span>
+              <span class="tech-tag">Chart.js</span>
+            </div>
+            <button type="button" class="modal-trigger-btn js-open-deepdive" data-project="ezspend">
+              <span data-i18n="deepDiveBtn">Architecture & Details →</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 2: E-Commerce Laptop -->
+        <article class="project-card" data-category="backend web">
+          <div class="project-top">
+            <div class="project-headline">
+              <span class="project-type-tag">Enterprise E-Commerce</span>
+              <h3 class="project-name">E-Commerce Laptop Store</h3>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/lamdayne/ecommerce-laptop" target="_blank" rel="noopener noreferrer" class="icon-link" title="View Source on GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <p class="project-description">
+            Hardware retail system handling multifaceted specs, dynamic cart validation, Spring Security RBAC authorization, and back-office order tracking.
+          </p>
+
+          <ul class="project-highlights">
+            <li class="project-highlight-item">Faceted hardware filtering (CPU, RAM, GPU, storage tier)</li>
+            <li class="project-highlight-item">Secure role-based auth (Admin / Customer) with Spring Security</li>
+            <li class="project-highlight-item">Transactional checkout with strict stock deduction locks</li>
+          </ul>
+
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Spring Boot</span>
+              <span class="tech-tag">Spring Security</span>
+              <span class="tech-tag">JPA / Hibernate</span>
+              <span class="tech-tag">PostgreSQL</span>
+            </div>
+            <button type="button" class="modal-trigger-btn js-open-deepdive" data-project="ecommerceLaptop">
+              <span data-i18n="deepDiveBtn">Architecture & Details →</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 3: Sneaker Store -->
+        <article class="project-card" data-category="backend web">
+          <div class="project-top">
+            <div class="project-headline">
+              <span class="project-type-tag">Retail & Inventory</span>
+              <h3 class="project-name">SneakerStore</h3>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/lamdayne/sneaker-store" target="_blank" rel="noopener noreferrer" class="icon-link" title="View Source on GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <p class="project-description">
+            Footwear commerce engine designed around a normalized SKU variant architecture for managing complex colorway and size matrices.
+          </p>
+
+          <ul class="project-highlights">
+            <li class="project-highlight-item">Dynamic SKU matrix for independent size & color inventory</li>
+            <li class="project-highlight-item">Frictionless checkout flow with real-time stock availability</li>
+            <li class="project-highlight-item">Clean DTO patterns and centralized exception handling</li>
+          </ul>
+
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Spring Boot</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Clean UI</span>
+            </div>
+            <button type="button" class="modal-trigger-btn js-open-deepdive" data-project="sneakerStore">
+              <span data-i18n="deepDiveBtn">Architecture & Details →</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 4: Humify -->
+        <article class="project-card" data-category="backend">
+          <div class="project-top">
+            <div class="project-headline">
+              <span class="project-type-tag">Operations & Workflow</span>
+              <h3 class="project-name">Humify</h3>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/lamdayne/humify" target="_blank" rel="noopener noreferrer" class="icon-link" title="View Source on GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <p class="project-description">
+            Internal HR workspace suite designed to streamline employee profiles, departmental hierarchies, attendance monitoring, and payroll calculations.
+          </p>
+
+          <ul class="project-highlights">
+            <li class="project-highlight-item">Employee lifecycle management & departmental hierarchy trees</li>
+            <li class="project-highlight-item">Attendance logging ledger with monthly work-hour aggregation</li>
+            <li class="project-highlight-item">Historical audit logs tracking sensitive administrative changes</li>
+          </ul>
+
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Spring</span>
+              <span class="tech-tag">JPA</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">RESTful API</span>
+            </div>
+            <button type="button" class="modal-trigger-btn js-open-deepdive" data-project="humify">
+              <span data-i18n="deepDiveBtn">Architecture & Details →</span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Experience & Education Dual Column Section -->
+    <div class="dual-section-grid">
+      
+      <!-- Experience Section -->
+      <section id="experience" class="experience-section">
+        <div class="section-header">
+          <span class="section-label" data-i18n="expLabel">Career Pathway</span>
+          <h2 class="section-title" data-i18n="expTitle">Experience</h2>
+        </div>
+
+        <div class="timeline-list">
+          
+          <!-- Experience Item 1 -->
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="timeline-period" data-i18n="exp1Period">2024 — Present</span>
+              <h3 class="timeline-role" data-i18n="exp1Role">Software Engineer / Backend Developer</h3>
+              <span class="timeline-org" data-i18n="exp1Org">Technology & Software Solutions</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li class="timeline-bullet" data-i18n="exp1Bullet1">
+                Engineered robust RESTful APIs in Java & Spring Boot with transactional consistency and modular domain-driven design.
+              </li>
+              <li class="timeline-bullet" data-i18n="exp1Bullet2">
+                Optimized relational database schemas and indexed SQL queries in PostgreSQL & MySQL, reducing average query response time.
+              </li>
+              <li class="timeline-bullet" data-i18n="exp1Bullet3">
+                Implemented secure authentication and role-based authorization (RBAC) layers.
+              </li>
+              <li class="timeline-bullet" data-i18n="exp1Bullet4">
+                Maintained rigorous Git workflows, code reviews, and structured API documentation via Postman / OpenAPI.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Experience Item 2 -->
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="timeline-period" data-i18n="exp2Period">2023 — 2024</span>
+              <h3 class="timeline-role" data-i18n="exp2Role">Full Stack Project Lead</h3>
+              <span class="timeline-org" data-i18n="exp2Org">FPT Polytechnic Academic Initiatives</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li class="timeline-bullet" data-i18n="exp2Bullet1">
+                Led development cycles for multi-tier web applications from database modeling to frontend integration.
+              </li>
+              <li class="timeline-bullet" data-i18n="exp2Bullet2">
+                Coordinated team sprint milestones, code standards, and automated testing suites.
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education" class="education-section">
+        <div class="section-header">
+          <span class="section-label" data-i18n="eduLabel">Academic Background</span>
+          <h2 class="section-title" data-i18n="eduTitle">Education & Foundation</h2>
+        </div>
+
+        <div class="timeline-list">
+          
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="timeline-period" data-i18n="eduPeriod">2022 — 2025</span>
+              <h3 class="timeline-role" data-i18n="eduDegree">Software Development / Information Technology</h3>
+              <span class="timeline-org" data-i18n="eduSchool">FPT Polytechnic</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li class="timeline-bullet" data-i18n="eduBullet1">
+                Core curriculum: Data Structures & Algorithms, Object-Oriented Programming (Java), Database Management (SQL), Software Design Patterns.
+              </li>
+              <li class="timeline-bullet" data-i18n="eduBullet2">
+                Hands-on project work developing enterprise web applications, REST services, and database-driven solutions.
+              </li>
+              <li class="timeline-bullet" data-i18n="eduBullet3">
+                Active peer mentor for junior students in core Java OOP and database schema design.
+              </li>
+            </ul>
+
+            <div class="education-meta-tags">
+              <span class="tech-tag">Java OOP</span>
+              <span class="tech-tag">Database Systems (SQL)</span>
+              <span class="tech-tag">Agile / Scrum</span>
+              <span class="tech-tag">Clean Architecture</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Technical Skills Section (Bento Grid) -->
+    <section id="stack" class="skills-section">
+      <div class="section-header">
+        <span class="section-label" data-i18n="skillsLabel">Technical Arsenal</span>
+        <h2 class="section-title" data-i18n="skillsTitle">Skills & Core Technologies</h2>
+      </div>
+
+      <div class="skills-bento">
+        
+        <!-- Category 1: Languages -->
+        <div class="skills-card">
+          <div class="skills-card-header">
+            <h3 class="skills-card-title" data-i18n="skillsCat1">Languages</h3>
+          </div>
+          <div class="skills-badge-list">
+            <span class="skill-pill skill-pill-highlight">Java</span>
+            <span class="skill-pill">JavaScript (ES6+)</span>
+            <span class="skill-pill">SQL</span>
+            <span class="skill-pill">HTML5</span>
+            <span class="skill-pill">CSS3</span>
+          </div>
+        </div>
+
+        <!-- Category 2: Backend -->
+        <div class="skills-card">
+          <div class="skills-card-header">
+            <h3 class="skills-card-title" data-i18n="skillsCat2">Backend & Architecture</h3>
+          </div>
+          <div class="skills-badge-list">
+            <span class="skill-pill skill-pill-highlight">Spring Boot</span>
+            <span class="skill-pill">Spring MVC</span>
+            <span class="skill-pill">Spring Data JPA</span>
+            <span class="skill-pill">Spring Security</span>
+            <span class="skill-pill">Hibernate</span>
+            <span class="skill-pill">RESTful APIs</span>
+          </div>
+        </div>
+
+        <!-- Category 3: Databases -->
+        <div class="skills-card">
+          <div class="skills-card-header">
+            <h3 class="skills-card-title" data-i18n="skillsCat3">Databases & Storage</h3>
+          </div>
+          <div class="skills-badge-list">
+            <span class="skill-pill skill-pill-highlight">MySQL</span>
+            <span class="skill-pill">PostgreSQL</span>
+            <span class="skill-pill">Schema Design</span>
+            <span class="skill-pill">Query Indexing</span>
+            <span class="skill-pill">ACID Transactions</span>
+          </div>
+        </div>
+
+        <!-- Category 4: Frontend -->
+        <div class="skills-card">
+          <div class="skills-card-header">
+            <h3 class="skills-card-title" data-i18n="skillsCat4">Frontend & UI</h3>
+          </div>
+          <div class="skills-badge-list">
+            <span class="skill-pill">Modern Vanilla JS</span>
+            <span class="skill-pill">Responsive Design</span>
+            <span class="skill-pill">DOM APIs</span>
+            <span class="skill-pill">Thymeleaf</span>
+            <span class="skill-pill">Tailwind CSS</span>
+          </div>
+        </div>
+
+        <!-- Category 5: Tooling & DevOps -->
+        <div class="skills-card">
+          <div class="skills-card-header">
+            <h3 class="skills-card-title" data-i18n="skillsCat5">DevOps & Tooling</h3>
+          </div>
+          <div class="skills-badge-list">
+            <span class="skill-pill skill-pill-highlight">Git & GitHub</span>
+            <span class="skill-pill">Docker</span>
+            <span class="skill-pill">Postman / Insomnia</span>
+            <span class="skill-pill">Maven / Gradle</span>
+            <span class="skill-pill">Linux / Bash</span>
+            <span class="skill-pill">VS Code / IntelliJ</span>
+          </div>
+        </div>
+
+        <!-- Category 6: Engineering Principles -->
+        <div class="skills-card">
+          <div class="skills-card-header">
+            <h3 class="skills-card-title" data-i18n="skillsCat6">Engineering Practices</h3>
+          </div>
+          <div class="skills-badge-list">
+            <span class="skill-pill">OOP & Design Patterns</span>
+            <span class="skill-pill">SOLID Principles</span>
+            <span class="skill-pill">Layered Architecture</span>
+            <span class="skill-pill">Agile / Scrum</span>
+            <span class="skill-pill">Code Reviews</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact & Direct Call to Action Section -->
+    <section id="contact" class="contact-section">
+      <div class="contact-card">
+        <div class="contact-layout">
+          <h2 class="contact-title" data-i18n="contactTitle">
+            Let's build something exceptional together.
+          </h2>
+          <p class="contact-desc" data-i18n="contactDesc">
+            Whether you have an open engineering role, a technical project to discuss, or just want to connect — feel free to drop an email.
+          </p>
+
+          <div class="contact-actions-row">
+            <!-- 1-Click Copy Box -->
+            <button type="button" class="email-copy-box js-copy-email" title="Click to copy email address">
+              <span>phuonglam.dev@gmail.com</span>
+              <svg class="copy-icon-indicator" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+
+            <!-- Direct Mailto Button -->
+            <a href="mailto:phuonglam.dev@gmail.com" class="btn btn-primary" data-i18n="sendEmailBtn">
+              Send an email
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Clean Minimalist Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span>© 2026 Nguyen Hoang Phuong Lam</span>
+        <span style="font-size: 0.75rem; color: var(--text-tertiary);">Engineered with pure HTML, CSS, and modern JavaScript. Zero unnecessary bloat.</span>
+      </div>
+
+      <div class="footer-right">
+        <!-- Live Real-Time Vietnam Clock -->
+        <div id="live-clock" class="live-clock" aria-label="Current Vietnam Time">
+          <span class="clock-dot"></span>
+          <span>Vietnam --:--:-- (ICT)</span>
+        </div>
+
+        <a href="#hero" class="back-to-top-btn" data-i18n="backToTop">
+          Back to top ↑
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Project Deep Dive Modal -->
+  <div id="deep-dive-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <span id="modal-project-type" class="project-type-tag">Full-Stack System</span>
+          <h3 id="modal-project-title" class="modal-title">Project Title</h3>
+        </div>
+        <button type="button" class="modal-close-btn js-modal-close" aria-label="Close dialog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div>
+          <h4 class="modal-section-title">The Problem</h4>
+          <p id="modal-project-problem" class="modal-text"></p>
+        </div>
+
+        <div>
+          <h4 class="modal-section-title">The Engineering Solution</h4>
+          <p id="modal-project-solution" class="modal-text"></p>
+        </div>
+
+        <div>
+          <h4 class="modal-section-title">Key Architectural Highlights</h4>
+          <ul id="modal-project-highlights" class="modal-list"></ul>
+        </div>
+
+        <div>
+          <h4 class="modal-section-title">Technologies Used</h4>
+          <div id="modal-project-tech" class="tech-tags"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm js-modal-close">Close</button>
+        <a id="modal-project-github" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          View Source Repository
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Command Palette Modal (Ctrl+K / Cmd+K) -->
+  <div id="cmd-palette-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cmd-input">
+    <div class="modal-box cmd-palette-box">
+      <div class="cmd-input-wrapper">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="cmd-input" class="cmd-input" placeholder="Type a command or jump to section..." autocomplete="off">
+        <button type="button" class="modal-close-btn js-modal-close" aria-label="Close palette">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <ul class="cmd-results-list">
+        <li class="cmd-item" data-action="nav-projects">
+          <span>Jump to Projects</span>
+          <span class="cmd-shortcut">P</span>
+        </li>
+        <li class="cmd-item" data-action="nav-experience">
+          <span>Jump to Experience</span>
+          <span class="cmd-shortcut">E</span>
+        </li>
+        <li class="cmd-item" data-action="nav-education">
+          <span>Jump to Education</span>
+          <span class="cmd-shortcut">D</span>
+        </li>
+        <li class="cmd-item" data-action="nav-stack">
+          <span>Jump to Tech Stack</span>
+          <span class="cmd-shortcut">S</span>
+        </li>
+        <li class="cmd-item" data-action="nav-contact">
+          <span>Jump to Contact</span>
+          <span class="cmd-shortcut">C</span>
+        </li>
+        <li class="cmd-item" data-action="copy-email">
+          <span>Copy Email Address (phuonglam.dev@gmail.com)</span>
+          <span class="cmd-shortcut">@</span>
+        </li>
+        <li class="cmd-item" data-action="open-github">
+          <span>Open GitHub Profile (@lamdayne)</span>
+          <span class="cmd-shortcut">GH</span>
+        </li>
+        <li class="cmd-item" data-action="open-linkedin">
+          <span>Open LinkedIn Profile (lamdayne)</span>
+          <span class="cmd-shortcut">IN</span>
+        </li>
+        <li class="cmd-item" data-action="toggle-theme">
+          <span>Toggle Dark / Light Theme</span>
+          <span class="cmd-shortcut">T</span>
+        </li>
+        <li class="cmd-item" data-action="toggle-lang">
+          <span>Toggle Language (English / Tiếng Việt)</span>
+          <span class="cmd-shortcut">L</span>
+        </li>
+      </ul>
+
+      <div class="cmd-footer">
+        <span>Navigation & Actions</span>
+        <span>ESC to close</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
